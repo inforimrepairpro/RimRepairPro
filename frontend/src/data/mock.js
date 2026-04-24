@@ -58,7 +58,7 @@ export const GALLERY = [
   'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/3zxk9c3a_hf_20260424_203121_a130f5c3-d2a3-4de2-95df-a7b73c8e9731.png',
 ];
 
-export const HERO_WHEEL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/mjevvctd_image.png';
+export const HERO_WHEEL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/9o24t1e2_image.png';
 
 export const PRICING = [
   { title: 'Curb Rash Repair', price: '$85', unit: '/wheel', features: ['Surface scratch removal','Edge restoration','OEM color match','Clear coat finish','Same-day available'] },

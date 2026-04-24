@@ -19,7 +19,7 @@ const Services = () => (
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {SERVICES.map((s, i) => (
-          <div key={i} className={`group relative rounded-[16px] p-8 border transition-all duration-300 ${s.popular ? 'bg-gradient-to-b from-[#1A1C1F] to-[#0f0f0f] border-[#C5C8CC]/40 shadow-[0_20px_50px_-20px_rgba(197,200,204,0.25)]' : 'bg-[#0f0f0f] border-[#1e1d1b] hover:border-[#C5C8CC]/30'}`}>
+          <div key={i} className={`tilt-card group relative rounded-[16px] p-8 border ${s.popular ? 'bg-gradient-to-b from-[#1A1C1F] to-[#0f0f0f] border-[#C5C8CC]/40 shadow-[0_20px_50px_-20px_rgba(197,200,204,0.25)]' : 'bg-[#0f0f0f] border-[#1e1d1b] hover:border-[#C5C8CC]/30'}`}>
             {s.popular && (
               <span className="absolute top-5 right-5 gold-btn text-[9px] tracking-[0.22em] uppercase px-2.5 py-1 rounded-full font-bold">Popular</span>
             )}

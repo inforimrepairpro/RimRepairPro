@@ -27,7 +27,7 @@ const Navbar = () => {
 
           <nav className="hidden lg:flex items-center gap-9">
             {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} className="text-[12px] uppercase tracking-[0.2em] text-[#8B8982] hover:text-[#E8EAED] transition-colors">{l.label}</a>
+              <a key={l.href} href={l.href} className="nav-link text-[12px] uppercase tracking-[0.2em] text-[#8B8982] hover:text-[#E8EAED] transition-colors">{l.label}</a>
             ))}
           </nav>
 

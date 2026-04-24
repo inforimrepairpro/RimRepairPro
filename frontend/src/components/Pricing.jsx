@@ -18,7 +18,7 @@ const Pricing = () => (
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {PRICING.map((p, i) => (
-          <div key={i} className={`relative rounded-[16px] p-7 border transition-all duration-300 flex flex-col ${p.popular ? 'bg-gradient-to-b from-[#1A1C1F] to-[#0f0f0f] border-[#C5C8CC]/50 -translate-y-2 shadow-[0_30px_60px_-20px_rgba(197,200,204,0.3)]' : 'bg-[#0f0f0f] border-[#1e1d1b] hover:border-[#C5C8CC]/30 hover:-translate-y-1'}`}>
+          <div key={i} className={`tilt-card relative rounded-[16px] p-7 border flex flex-col ${p.popular ? 'bg-gradient-to-b from-[#1A1C1F] to-[#0f0f0f] border-[#C5C8CC]/50 -translate-y-2 shadow-[0_30px_60px_-20px_rgba(197,200,204,0.3)]' : 'bg-[#0f0f0f] border-[#1e1d1b] hover:border-[#C5C8CC]/30 hover:-translate-y-1'}`}>
             {p.popular && (
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 gold-btn text-[9px] uppercase tracking-[0.22em] px-3 py-1.5 rounded-full font-bold">Most Popular</span>
             )}
