@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Phone, ArrowRight, Truck, Zap, Award, ShieldCheck } from 'lucide-react';
 import { BRAND, HERO_WHEEL, HERO_STATS_INLINE } from '../data/mock';
 
 const ICONS = { Truck, Zap, Award, ShieldCheck };
 
-const Hero = () => (
+const Hero = () => {
+  const wheelRef = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (wheelRef.current) {
+        // Smooth scroll-driven rotation — wheel "rolls" as you scroll.
+        wheelRef.current.style.transform = `rotate(${window.scrollY * 0.28}deg)`;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
   <section id="top" className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
     {/* Gold spotlight on right */}
     <div className="absolute right-[-15%] top-[5%] w-[900px] h-[900px] spotlight pointer-events-none" />
@@ -61,27 +76,30 @@ const Hero = () => (
         </div>
       </div>
 
-      {/* Right wheel */}
+      {/* Right wheel — scroll-driven rotation */}
       <div className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s' }}>
-        <div className="relative w-[420px] h-[420px] md:w-[520px] md:h-[520px] lg:w-[600px] lg:h-[600px]">
-          {/* Chrome halo */}
-          <div className="absolute inset-0 rounded-full blur-3xl" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.35) 0%, rgba(197,200,204,0) 70%)'}} />
-          {/* Ornamental rings */}
-          <div className="absolute inset-2 rounded-full border border-[#C5C8CC]/20" />
-          <div className="absolute inset-6 rounded-full border border-[#C5C8CC]/15" />
-          <div className="absolute inset-12 rounded-full border border-[#C5C8CC]/10" />
-          {/* Wheel (spinning) */}
-          <div className="absolute inset-4 rounded-full overflow-hidden ring-2 ring-[#C5C8CC]/30 shadow-[0_20px_60px_-10px_rgba(0,0,0,0.7),inset_0_0_40px_rgba(0,0,0,0.6)] animate-spin-wheel bg-black">
-            <img src={HERO_WHEEL} alt="Premium forged alloy wheel" className="w-full h-full object-cover scale-110" />
-            {/* Inner depth shadow for 3D feel */}
-            <div className="absolute inset-0 rounded-full pointer-events-none" style={{background: 'radial-gradient(circle at 35% 35%, rgba(255,255,255,0.08) 0%, transparent 40%), radial-gradient(circle at 70% 70%, rgba(0,0,0,0.5) 60%, transparent 80%)'}} />
+        <div className="relative w-[440px] h-[440px] md:w-[540px] md:h-[540px] lg:w-[620px] lg:h-[620px]">
+          {/* Soft chrome halo behind wheel */}
+          <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.28) 0%, rgba(197,200,204,0) 60%)'}} />
+          {/* Wheel image — rotates with scroll. Radial mask hides image corners so only the round wheel shows. */}
+          <div ref={wheelRef} className="absolute inset-0 flex items-center justify-center will-change-transform" style={{ transition: 'transform 120ms linear' }}>
+            <img
+              src={HERO_WHEEL}
+              alt="Premium forged alloy wheel"
+              className="w-full h-full object-contain select-none pointer-events-none"
+              draggable="false"
+              style={{
+                WebkitMaskImage: 'radial-gradient(circle at center, black 52%, transparent 62%)',
+                maskImage: 'radial-gradient(circle at center, black 52%, transparent 62%)',
+                filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.6))',
+              }}
+            />
           </div>
-          {/* Center hub glint (doesn't spin) */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gradient-to-br from-white/40 to-transparent blur-sm pointer-events-none" />
         </div>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Hero;
