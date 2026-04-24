@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Phone, ArrowRight, Truck, Zap, Award, ShieldCheck } from 'lucide-react';
-import { BRAND, HERO_WHEEL, HERO_STATS_INLINE } from '../data/mock';
+import { BRAND, HERO_STATS_INLINE } from '../data/mock';
+import WheelSVG from './WheelSVG';
 
 const ICONS = { Truck, Zap, Award, ShieldCheck };
 
@@ -76,24 +77,16 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right wheel — scroll-driven rotation */}
+      {/* Right wheel — perfectly symmetric SVG, rotates smoothly on scroll */}
       <div className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s' }}>
-        <div className="relative w-[440px] h-[440px] md:w-[540px] md:h-[540px] lg:w-[620px] lg:h-[620px]">
-          {/* Soft chrome halo behind wheel */}
+        <div className="relative w-[440px] h-[440px] md:w-[540px] md:h-[540px] lg:w-[600px] lg:h-[600px]">
+          {/* Chrome halo */}
           <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.28) 0%, rgba(197,200,204,0) 60%)'}} />
-          {/* Wheel image — rotates with scroll. Radial mask hides image corners so only the round wheel shows. */}
+          {/* Drop shadow under wheel */}
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-4 w-[70%] h-6 rounded-[50%] bg-black/60 blur-2xl pointer-events-none" />
+          {/* Wheel — perfectly round SVG, rotates with scroll */}
           <div ref={wheelRef} className="absolute inset-0 flex items-center justify-center will-change-transform" style={{ transition: 'transform 120ms linear' }}>
-            <img
-              src={HERO_WHEEL}
-              alt="Premium forged alloy wheel"
-              className="w-full h-full object-contain select-none pointer-events-none"
-              draggable="false"
-              style={{
-                WebkitMaskImage: 'radial-gradient(circle at center, black 52%, transparent 62%)',
-                maskImage: 'radial-gradient(circle at center, black 52%, transparent 62%)',
-                filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.6))',
-              }}
-            />
+            <WheelSVG className="w-full h-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]" />
           </div>
         </div>
       </div>
