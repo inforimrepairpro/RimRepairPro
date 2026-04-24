@@ -21,7 +21,7 @@ const Navbar = () => {
       <header className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-[#0a0a0b]/90 backdrop-blur-md border-b border-[#1e1d1b]' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-5 md:px-8 h-[84px] flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3 group">
-            <img src={LOGO_URL} alt={BRAND.name} className="h-14 md:h-16 w-auto object-contain rounded-full" />
+            <img src={LOGO_URL} alt={BRAND.name} className="h-14 md:h-16 w-auto object-contain" style={{ mixBlendMode: 'screen' }} />
             <span className="hidden sm:inline text-[13px] md:text-[14px] font-semibold tracking-[0.22em] text-[#F5F3EE] uppercase">{BRAND.name}</span>
           </a>
 
