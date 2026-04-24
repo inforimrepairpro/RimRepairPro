@@ -1,12 +1,12 @@
 .App {
     min-height: 100vh;
+    background: #0a0a0b;
 }
 
-.brand-teal { color: #0E4A52; }
-.bg-brand-teal { background-color: #0E4A52; }
-.brand-copper { color: #C15A3E; }
-.bg-brand-copper { background-color: #C15A3E; }
-.bg-cream { background-color: #F6F1E8; }
-.bg-cream-warm { background-color: #EFE7D8; }
-.brand-charcoal { color: #1A2327; }
-.border-cream-edge { border-color: #E3D8C3; }
+.text-gold { color: #E5A848; }
+.text-gold-light { color: #F4C57A; }
+.bg-panel { background-color: #111111; }
+.bg-panel-2 { background-color: #0f0f0f; }
+.border-gold-faint { border-color: rgba(228, 168, 72, 0.2); }
+.border-subtle { border-color: #1e1d1b; }
+.text-muted-cream { color: #8B8982; }

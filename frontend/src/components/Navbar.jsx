@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Phone, Menu, X, Wrench } from 'lucide-react';
+import { Menu, X, Cog } from 'lucide-react';
 import { BRAND, NAV_LINKS } from '../data/mock';
 
 const Navbar = () => {
@@ -13,50 +13,57 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-[#F6F1E8]/85 backdrop-blur-md border-b border-[#E3D8C3]' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 rounded-full bg-[#0E4A52] flex items-center justify-center ring-1 ring-[#0E4A52]/20 shadow-sm">
-            <Wrench className="w-5 h-5 text-[#F6F1E8]" strokeWidth={2} />
-            <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#C15A3E] ring-2 ring-[#F6F1E8]" />
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="font-serif-display text-[17px] font-semibold brand-charcoal tracking-tight">{BRAND.name}</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[#6B6557]">Mobile · LA</span>
-          </div>
-        </a>
-
-        <nav className="hidden lg:flex items-center gap-8">
-          {NAV_LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="text-[13px] uppercase tracking-[0.16em] text-[#1A2327] hover:text-[#C15A3E] transition-colors">{l.label}</a>
-          ))}
-        </nav>
-
-        <div className="hidden md:flex items-center gap-3">
-          <a href={`tel:${BRAND.phoneTel}`} className="text-[13px] font-medium text-[#1A2327] hover:text-[#0E4A52] transition-colors">{BRAND.phone}</a>
-          <a href={`tel:${BRAND.phoneTel}`} className="inline-flex items-center gap-2 rounded-full bg-[#0E4A52] text-[#F6F1E8] px-5 py-2.5 text-[13px] font-medium hover:bg-[#C15A3E] transition-colors">
-            <Phone className="w-4 h-4" /> Free Quote
-          </a>
-        </div>
-
-        <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-[#1A2327]" aria-label="Menu">
-          {open ? <X className="w-6 h-6"/> : <Menu className="w-6 h-6"/>}
-        </button>
+    <>
+      {/* Top progress bar */}
+      <div className="fixed top-0 inset-x-0 h-[2px] bg-[#1a1916] z-[60] overflow-hidden">
+        <div className="h-full w-1/3 bg-gradient-to-r from-transparent via-[#E5A848] to-transparent animate-progress" />
       </div>
 
-      {open && (
-        <div className="lg:hidden bg-[#F6F1E8] border-t border-[#E3D8C3]">
-          <div className="px-5 py-5 flex flex-col gap-4">
+      <header className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-[#0a0a0b]/90 backdrop-blur-md border-b border-[#1e1d1b]' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-5 md:px-8 h-[80px] flex items-center justify-between">
+          <a href="#top" className="flex items-center gap-3 group">
+            <div className="relative w-12 h-12 rounded-full flex items-center justify-center shadow-[0_0_40px_-8px_rgba(228,168,72,0.6)]" style={{background: 'radial-gradient(circle at 30% 30%, #4a3418 0%, #1a1408 100%)'}}>
+              <div className="absolute inset-[2px] rounded-full" style={{background: 'linear-gradient(135deg, #F4C57A 0%, #B8822A 100%)'}}>
+                <div className="absolute inset-[3px] rounded-full bg-[#0a0a0b] flex items-center justify-center">
+                  <Cog className="w-5 h-5 text-[#E5A848]" strokeWidth={1.5} />
+                </div>
+              </div>
+            </div>
+            <span className="text-[14px] md:text-[15px] font-semibold tracking-[0.18em] text-[#F5F3EE] uppercase">{BRAND.name}</span>
+          </a>
+
+          <nav className="hidden lg:flex items-center gap-9">
             {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-[14px] uppercase tracking-[0.16em] text-[#1A2327]">{l.label}</a>
+              <a key={l.href} href={l.href} className="text-[12px] uppercase tracking-[0.2em] text-[#8B8982] hover:text-[#E5A848] transition-colors">{l.label}</a>
             ))}
-            <a href={`tel:${BRAND.phoneTel}`} className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#0E4A52] text-[#F6F1E8] px-5 py-3 text-[13px] font-medium">
-              <Phone className="w-4 h-4" /> Call {BRAND.phone}
+          </nav>
+
+          <div className="hidden md:flex items-center gap-5">
+            <a href={`tel:${BRAND.phoneTel}`} className="text-[13px] text-[#8B8982] hover:text-[#E5A848] transition-colors">{BRAND.phone}</a>
+            <a href={`tel:${BRAND.phoneTel}`} className="gold-btn inline-flex items-center rounded-[10px] px-5 py-2.5 text-[12px] font-semibold tracking-[0.16em] uppercase transition-all">
+              Free Quote
             </a>
           </div>
+
+          <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-[#F5F3EE]" aria-label="Menu">
+            {open ? <X className="w-6 h-6"/> : <Menu className="w-6 h-6"/>}
+          </button>
         </div>
-      )}
-    </header>
+
+        {open && (
+          <div className="lg:hidden bg-[#0a0a0b]/95 backdrop-blur-md border-t border-[#1e1d1b]">
+            <div className="px-5 py-5 flex flex-col gap-4">
+              {NAV_LINKS.map((l) => (
+                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-[13px] uppercase tracking-[0.2em] text-[#8B8982] hover:text-[#E5A848]">{l.label}</a>
+              ))}
+              <a href={`tel:${BRAND.phoneTel}`} className="mt-2 gold-btn inline-flex items-center justify-center gap-2 rounded-[10px] px-5 py-3 text-[12px] font-semibold tracking-[0.16em] uppercase">
+                Call {BRAND.phone}
+              </a>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
   );
 };
 

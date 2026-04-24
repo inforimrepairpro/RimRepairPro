@@ -15,7 +15,7 @@ import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 
 const Home = () => (
-  <div className="min-h-screen bg-[#F6F1E8]">
+  <div className="min-h-screen bg-[#0a0a0b]">
     <Navbar />
     <Hero />
     <Stats />

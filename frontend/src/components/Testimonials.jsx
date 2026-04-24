@@ -3,27 +3,27 @@ import { Quote, Star } from 'lucide-react';
 import { TESTIMONIALS } from '../data/mock';
 
 const Testimonials = () => (
-  <section id="reviews" className="bg-[#0E4A52] text-[#F6F1E8] py-20 md:py-28 relative overflow-hidden grain-overlay">
-    <div className="absolute inset-0 bg-gradient-to-b from-[#0E4A52] to-[#0A3B41] pointer-events-none" />
+  <section id="reviews" className="bg-[#0a0a0b] py-20 md:py-28 relative border-t border-[#1e1d1b]">
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(228,168,72,0.08),transparent_60%)] pointer-events-none" />
     <div className="relative max-w-7xl mx-auto px-5 md:px-8">
       <div className="max-w-2xl mb-14">
-        <span className="inline-block text-[11px] uppercase tracking-[0.28em] text-[#EFB89A] mb-4">Testimonials</span>
-        <h2 className="font-serif-display text-[44px] md:text-[64px] leading-[1.02] font-semibold">
-          Client <span className="italic text-[#EFB89A]">voices</span>
+        <span className="inline-block text-[11px] uppercase tracking-[0.32em] text-[#E5A848] mb-5">Testimonials</span>
+        <h2 className="font-display text-[48px] md:text-[72px] leading-[0.95] font-bold text-[#F5F3EE]">
+          Client <span className="gold-text">Voices</span>
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid md:grid-cols-3 gap-5">
         {TESTIMONIALS.map((t, i) => (
-          <div key={i} className="relative bg-[#F6F1E8]/5 backdrop-blur rounded-2xl p-7 border border-[#F6F1E8]/10 hover:border-[#C15A3E]/50 transition-colors">
-            <Quote className="w-7 h-7 text-[#C15A3E] mb-4" />
-            <p className="font-serif-display text-[18px] leading-[1.5] italic text-[#F6F1E8]">“{t.quote}”</p>
-            <div className="mt-5 flex items-center gap-1 text-[#EFB89A]">
-              {[0,1,2,3,4].map(s => <Star key={s} className="w-3.5 h-3.5 fill-current" />)}
+          <div key={i} className="relative rounded-[16px] p-8 border border-[#1e1d1b] bg-[#0f0f0f] hover:border-[#E5A848]/40 transition-colors">
+            <Quote className="w-8 h-8 text-[#E5A848] mb-5" />
+            <p className="text-[17px] leading-[1.5] text-[#F5F3EE]">“{t.quote}”</p>
+            <div className="mt-6 flex items-center gap-1 text-[#E5A848]">
+              {[0,1,2,3,4].map(s => <Star key={s} className="w-4 h-4 fill-current" />)}
             </div>
-            <div className="mt-3 pt-4 border-t border-[#F6F1E8]/10">
-              <div className="text-[14px] font-semibold">{t.name}</div>
-              <div className="text-[11px] uppercase tracking-[0.18em] text-[#F6F1E8]/60">{t.car}</div>
+            <div className="mt-4 pt-4 border-t border-[#1e1d1b]">
+              <div className="text-[15px] font-semibold text-[#F5F3EE]">{t.name}</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-[#8B8982] mt-1">{t.car}</div>
             </div>
           </div>
         ))}
