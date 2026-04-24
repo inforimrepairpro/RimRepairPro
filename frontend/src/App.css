@@ -1,0 +1,12 @@
+.App {
+    min-height: 100vh;
+}
+
+.brand-teal { color: #0E4A52; }
+.bg-brand-teal { background-color: #0E4A52; }
+.brand-copper { color: #C15A3E; }
+.bg-brand-copper { background-color: #C15A3E; }
+.bg-cream { background-color: #F6F1E8; }
+.bg-cream-warm { background-color: #EFE7D8; }
+.brand-charcoal { color: #1A2327; }
+.border-cream-edge { border-color: #E3D8C3; }
