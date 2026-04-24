@@ -8,11 +8,7 @@ const Footer = () => (
       <div className="grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
           <div className="flex items-center gap-4">
-            <img src={LOGO_URL} alt={BRAND.name} className="h-20 w-auto object-contain" style={{ mixBlendMode: 'screen' }} />
-            <div>
-              <div className="text-[16px] font-semibold tracking-[0.22em] uppercase">{BRAND.name}</div>
-              <div className="text-[10px] uppercase tracking-[0.22em] text-[#8B8982] mt-1">Premium Wheel Restoration</div>
-            </div>
+            <img src={LOGO_URL} alt={BRAND.name} className="h-24 w-auto object-contain" />
           </div>
           <p className="mt-5 text-[14px] leading-relaxed text-[#8B8982] max-w-sm">
             Premium mobile wheel restoration across Greater Los Angeles. Curb rash, bent wheels, powder coating, chrome — same-day service, lifetime warranty.

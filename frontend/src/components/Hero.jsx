@@ -1,24 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Phone, ArrowRight, Truck, Zap, Award, ShieldCheck } from 'lucide-react';
 import { BRAND, HERO_WHEEL, HERO_STATS_INLINE } from '../data/mock';
 
 const ICONS = { Truck, Zap, Award, ShieldCheck };
 
 const Hero = () => {
-  const wheelRef = useRef(null);
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (wheelRef.current) {
-        // Smooth scroll-driven rotation — wheel "rolls" as you scroll.
-        wheelRef.current.style.transform = `rotate(${window.scrollY * 0.18}deg)`;
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
   <section id="top" className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
     {/* Gold spotlight on right */}
@@ -76,15 +62,15 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right wheel — real photo, blended with hero background, rotates with scroll */}
+      {/* Right wheel — static display with soft floaty motion, like Prime Rim Repair */}
       <div className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s' }}>
-        <div className="relative w-[460px] h-[460px] md:w-[560px] md:h-[560px] lg:w-[620px] lg:h-[620px]">
+        <div className="relative w-[460px] h-[460px] md:w-[560px] md:h-[560px] lg:w-[640px] lg:h-[640px]">
           {/* Chrome halo glow behind */}
-          <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.28) 0%, rgba(197,200,204,0) 62%)'}} />
+          <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.32) 0%, rgba(197,200,204,0) 62%)'}} />
           {/* Soft floor shadow */}
           <div className="absolute left-1/2 -translate-x-1/2 bottom-2 w-[70%] h-6 rounded-[50%] bg-black/70 blur-2xl pointer-events-none" />
-          {/* Wheel image — rotates with scroll. Radial mask crops image corners so only the round wheel appears floating on the background. */}
-          <div ref={wheelRef} className="absolute inset-0 flex items-center justify-center will-change-transform" style={{ transition: 'transform 120ms linear' }}>
+          {/* Wheel — radial mask removes square photo corners so only the round wheel shows */}
+          <div className="absolute inset-0 flex items-center justify-center animate-floaty">
             <img
               src={HERO_WHEEL}
               alt="Premium forged alloy wheel"
@@ -93,7 +79,7 @@ const Hero = () => {
               style={{
                 WebkitMaskImage: 'radial-gradient(circle at center, black 46%, transparent 50%)',
                 maskImage: 'radial-gradient(circle at center, black 46%, transparent 50%)',
-                filter: 'drop-shadow(0 24px 40px rgba(0,0,0,0.7)) brightness(1.04) contrast(1.03)',
+                filter: 'drop-shadow(0 26px 44px rgba(0,0,0,0.7)) brightness(1.04) contrast(1.04)',
               }}
             />
           </div>
