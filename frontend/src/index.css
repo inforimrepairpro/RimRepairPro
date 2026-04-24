@@ -69,6 +69,17 @@ code {
 }
 .animate-slow-spin { animation: slowSpin 60s linear infinite; }
 
+/* Dynamic 3D-feel wheel spin */
+@keyframes spinWheel {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.animate-spin-wheel {
+    animation: spinWheel 14s linear infinite;
+    transform-origin: center center;
+    will-change: transform;
+}
+
 /* Progress bar (top) */
 @keyframes progress {
     0% { transform: translateX(-100%); }
