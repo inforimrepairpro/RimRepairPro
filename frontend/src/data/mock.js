@@ -1,8 +1,10 @@
+export const LOGO_URL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/961y8kp6_hf_20260415_090101_49e7437d-3914-45f2-82b8-d3201289f9bf.png';
+
 export const BRAND = {
   name: 'Rim Repair Pro',
   nameUpper: 'RIM REPAIR PRO',
-  phone: '(747) 955-7555',
-  phoneTel: '7479557555',
+  phone: '(747) 717-0060',
+  phoneTel: '7477170060',
   tagline: 'Mobile Service · We Come To You',
   city: 'Los Angeles',
 };
@@ -50,13 +52,10 @@ export const SERVICES = [
 ];
 
 export const GALLERY = [
-  'https://images.unsplash.com/photo-1658058765827-3a27bf8009e1',
-  'https://images.unsplash.com/photo-1762671432270-da3fc3badf57',
-  'https://images.pexels.com/photos/34027132/pexels-photo-34027132.jpeg',
-  'https://images.unsplash.com/photo-1761659111095-a11e1d2ba294',
-  'https://images.pexels.com/photos/33170243/pexels-photo-33170243.jpeg',
-  'https://images.unsplash.com/photo-1763291894075-33c686e1a72c',
-  'https://images.unsplash.com/photo-1760836395810-ceb75a3c2540',
+  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/pm142zyh_hf_20260424_204650_7c55fbd4-7b88-4a51-a256-5204ed986ba6.png',
+  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/9e8vzlj0_hf_20260424_204304_bf194c8a-63eb-4c2e-b916-ea8c51c927f2.png',
+  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/853z266j_hf_20260424_203317_9c302291-afdb-446e-a79e-39bf3fa1f907.png',
+  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/3zxk9c3a_hf_20260424_203121_a130f5c3-d2a3-4de2-95df-a7b73c8e9731.png',
 ];
 
 export const HERO_WHEEL = 'https://images.unsplash.com/photo-1658058765830-a7e4c6dd9fff';
@@ -69,16 +68,17 @@ export const PRICING = [
 ];
 
 export const PROCESS = [
-  { n: '01', title: 'Call Us', desc: 'Call or text (747) 955-7555. Describe your wheel damage for an initial estimate.' },
+  { n: '01', title: 'Call Us', desc: 'Call or text (747) 717-0060. Describe your wheel damage for an initial estimate.' },
   { n: '02', title: 'Free Assessment', desc: 'We inspect your wheels and provide a detailed, no-obligation quote.' },
   { n: '03', title: 'Expert Repair', desc: 'Our technicians restore your wheels using industry-leading equipment.' },
   { n: '04', title: 'Perfect Results', desc: 'Quality inspection ensures flawless results. Wheels returned looking brand new.' },
 ];
 
 export const TESTIMONIALS = [
-  { quote: 'The finish on my M4 rims is actually superior to how they came from factory. Absolute professionals.', name: 'Marcus V.', car: 'BMW M4' },
-  { quote: 'I thought my forged wheels were beyond repair after a pothole. Rim Repair Pro made them look brand new.', name: 'Julian R.', car: 'Porsche 911' },
-  { quote: 'Diamond cut is mirror-perfect. Best wheel repair shop in LA, hands down.', name: 'Elena S.', car: 'Range Rover' },
+  { quote: 'Had a nasty curb scrape on my 4 Series — the team at Rim Repair Pro showed up, color-matched the diamond silver flawlessly and were gone in under two hours. You cannot even tell where the damage was.', name: 'Andre Kowalski', car: 'BMW 4 Series' },
+  { quote: 'Booked them for my Model Y after clipping a pothole. They refinished all four matte wheels right in my driveway the same day. Factory look, zero hassle.', name: 'Nadia Chen', car: 'Tesla Model Y' },
+  { quote: 'Best wheel work I have had in fifteen years of owning exotics. Powder coated my 992 wheels satin graphite and the finish is deeper than OEM. Worth every dollar.', name: 'Tomas Delgado', car: 'Porsche 911' },
+  { quote: 'These guys saved me $4,200. My M340i wheel was bent and gouged — the replacement quote was insane. They straightened and refinished it for a fraction and it is perfect.', name: 'Kristen Holloway', car: 'BMW M340i' },
 ];
 
 export const FAQS = [

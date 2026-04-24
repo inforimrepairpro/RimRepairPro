@@ -12,8 +12,8 @@ const Hero = () => (
 
     <div className="relative max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
       <div className="lg:col-span-6 fade-up">
-        <div className="inline-flex items-center gap-2 rounded-[10px] border border-[#2a2622] bg-[#14120e]/60 backdrop-blur px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#E5A848]">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#E5A848] animate-pulse" />
+        <div className="inline-flex items-center gap-2 rounded-[10px] border border-[#2a2622] bg-[#14120e]/60 backdrop-blur px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#C5C8CC]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#C5C8CC] animate-pulse" />
           Mobile Service · We Come To You
         </div>
 
@@ -24,7 +24,7 @@ const Hero = () => (
           </span>
         </h1>
 
-        <p className="mt-4 text-[18px] md:text-[20px] text-[#E5A848]/85 font-medium">We Come To You</p>
+        <p className="mt-4 text-[18px] md:text-[20px] text-[#C5C8CC]/85 font-medium">We Come To You</p>
 
         <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-[#8B8982]">
           Premium mobile wheel restoration. Curb rash, bent wheels, custom refinishing — right at your doorstep. Same-day service available.
@@ -34,10 +34,10 @@ const Hero = () => (
           <a href={`tel:${BRAND.phoneTel}`} className="gold-btn inline-flex items-center gap-2 rounded-[12px] px-7 py-4 text-[12px] font-semibold tracking-[0.2em] uppercase transition-all">
             <Phone className="w-4 h-4" /> Call Now
           </a>
-          <a href="#services" className="inline-flex items-center gap-2 rounded-[12px] border border-[#2a2622] bg-[#14120e]/40 px-7 py-4 text-[12px] font-semibold tracking-[0.2em] uppercase text-[#F5F3EE] hover:border-[#E5A848] hover:text-[#E5A848] transition-colors">
+          <a href="#services" className="inline-flex items-center gap-2 rounded-[12px] border border-[#2a2622] bg-[#14120e]/40 px-7 py-4 text-[12px] font-semibold tracking-[0.2em] uppercase text-[#F5F3EE] hover:border-[#C5C8CC] hover:text-[#C5C8CC] transition-colors">
             Our Services <ArrowRight className="w-4 h-4" />
           </a>
-          <a href={`tel:${BRAND.phoneTel}`} className="hidden sm:inline-block text-[17px] text-[#E5A848] hover:text-[#F4C57A] font-semibold transition-colors">
+          <a href={`tel:${BRAND.phoneTel}`} className="hidden sm:inline-block text-[17px] text-[#C5C8CC] hover:text-[#E8EAED] font-semibold transition-colors">
             {BRAND.phone}
           </a>
         </div>
@@ -48,8 +48,8 @@ const Hero = () => (
             const Icon = ICONS[s.icon];
             return (
               <div key={i} className="flex items-center gap-3 rounded-[10px] border border-[#2a2622] bg-[#14120e]/40 backdrop-blur px-4 py-3 min-w-[160px]">
-                <div className="w-9 h-9 rounded-full border border-[#E5A848]/30 bg-[#1a1408] flex items-center justify-center">
-                  <Icon className="w-4 h-4 text-[#E5A848]" />
+                <div className="w-9 h-9 rounded-full border border-[#C5C8CC]/30 bg-[#1A1C1F] flex items-center justify-center">
+                  <Icon className="w-4 h-4 text-[#C5C8CC]" />
                 </div>
                 <div className="leading-tight">
                   <div className="text-[13px] font-semibold text-[#F5F3EE]">{s.label}</div>
@@ -65,12 +65,12 @@ const Hero = () => (
       <div className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s' }}>
         <div className="relative w-[420px] h-[420px] md:w-[520px] md:h-[520px] lg:w-[600px] lg:h-[600px]">
           {/* Gold halo */}
-          <div className="absolute inset-0 rounded-full blur-3xl" style={{background: 'radial-gradient(circle, rgba(228,168,72,0.25) 0%, rgba(228,168,72,0) 70%)'}} />
+          <div className="absolute inset-0 rounded-full blur-3xl" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.25) 0%, rgba(197,200,204,0) 70%)'}} />
           {/* Ring */}
-          <div className="absolute inset-4 rounded-full border border-[#E5A848]/15" />
-          <div className="absolute inset-10 rounded-full border border-[#E5A848]/10" />
+          <div className="absolute inset-4 rounded-full border border-[#C5C8CC]/15" />
+          <div className="absolute inset-10 rounded-full border border-[#C5C8CC]/10" />
           {/* Wheel */}
-          <div className="absolute inset-8 rounded-full overflow-hidden ring-1 ring-[#E5A848]/20 animate-slow-spin">
+          <div className="absolute inset-8 rounded-full overflow-hidden ring-1 ring-[#C5C8CC]/20 animate-slow-spin">
             <img src={HERO_WHEEL} alt="Premium forged alloy wheel" className="w-full h-full object-cover" />
           </div>
         </div>

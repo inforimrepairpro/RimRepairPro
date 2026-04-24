@@ -13,7 +13,7 @@ const BrandsTicker = () => {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0a0a0b] to-transparent z-10" />
         <div className="flex gap-14 animate-marquee whitespace-nowrap">
           {items.map((b, i) => (
-            <span key={i} className="font-display text-[28px] md:text-[36px] text-[#F5F3EE]/25 hover:text-[#E5A848] transition-colors font-semibold tracking-tight">
+            <span key={i} className="font-display text-[28px] md:text-[36px] text-[#F5F3EE]/25 hover:text-[#C5C8CC] transition-colors font-semibold tracking-tight">
               {b}
             </span>
           ))}

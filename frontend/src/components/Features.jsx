@@ -10,9 +10,9 @@ const Features = () => (
       {FEATURES.map((f, i) => {
         const Icon = ICONS[f.icon];
         return (
-          <div key={i} className="group relative rounded-[16px] p-7 border border-[#1e1d1b] bg-[#0f0f0f] hover:border-[#E5A848]/40 hover:-translate-y-1 transition-all duration-300">
-            <div className="w-12 h-12 rounded-xl border border-[#E5A848]/20 bg-gradient-to-br from-[#1a1408] to-[#0a0a0b] flex items-center justify-center mb-5 group-hover:shadow-[0_0_24px_-6px_rgba(228,168,72,0.5)] transition-shadow">
-              <Icon className="w-5 h-5 text-[#E5A848]" />
+          <div key={i} className="group relative rounded-[16px] p-7 border border-[#1e1d1b] bg-[#0f0f0f] hover:border-[#C5C8CC]/40 hover:-translate-y-1 transition-all duration-300">
+            <div className="w-12 h-12 rounded-xl border border-[#C5C8CC]/20 bg-gradient-to-br from-[#1A1C1F] to-[#0a0a0b] flex items-center justify-center mb-5 group-hover:shadow-[0_0_24px_-6px_rgba(197,200,204,0.5)] transition-shadow">
+              <Icon className="w-5 h-5 text-[#C5C8CC]" />
             </div>
             <h3 className="text-[20px] font-semibold text-[#F5F3EE] tracking-tight">{f.title}</h3>
             <p className="mt-2 text-[14px] leading-relaxed text-[#8B8982]">{f.desc}</p>
