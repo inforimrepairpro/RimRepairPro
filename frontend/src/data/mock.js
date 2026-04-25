@@ -1,4 +1,4 @@
-export const LOGO_URL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/s066qaib_hf_20260424_224219_35c61e49-59b5-4941-b4f7-ff5cf708e64c.png';
+export const LOGO_URL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/tra44lg4_hf_20260424_224219_35c61e49-59b5-4941-b4f7-ff5cf708e64c-removebg-preview.png';
 
 export const BRAND = {
   name: 'Rim Repair Pro',
