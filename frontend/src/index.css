@@ -136,6 +136,49 @@ code {
 }
 .animate-progress { animation: progress 2.5s ease-in-out infinite; }
 
+/* Continuous wheel spin (matches Rim Repair Joe's reference — 35s per revolution) */
+@keyframes wheelSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.animate-wheel-spin {
+    animation: wheelSpin 35s linear infinite;
+    transform-origin: center center;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Mobile / iOS optimizations */
+html, body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+}
+body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+}
+
+/* Prevent horizontal overflow on root */
+#root { overflow-x: hidden; }
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .animate-wheel-spin,
+    .animate-marquee,
+    .animate-floaty,
+    .animate-progress { animation: none !important; }
+    * { transition-duration: 0.01ms !important; }
+}
+
+/* Disable hover effects on touch devices to prevent stuck states */
+@media (hover: none) {
+    .tilt-card:hover { transform: none; box-shadow: none; }
+    .gold-btn:hover { transform: none; filter: none; box-shadow: 0 10px 30px -10px rgba(197, 200, 204, 0.35), inset 0 1px 0 rgba(255,255,255,0.5); }
+    .nav-link:hover::after { transform: scaleX(0); }
+}
+
 html { scroll-behavior: smooth; }
 
 ::selection { background: #C5C8CC; color: #0a0a0b; }

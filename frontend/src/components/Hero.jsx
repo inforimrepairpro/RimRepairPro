@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Phone, ArrowRight, Truck, Zap, Award, ShieldCheck } from 'lucide-react';
-import { BRAND, HERO_STATS_INLINE } from '../data/mock';
-import WheelSVG from './WheelSVG';
+import { BRAND, HERO_WHEEL, HERO_STATS_INLINE } from '../data/mock';
 
 const ICONS = { Truck, Zap, Award, ShieldCheck };
 
@@ -10,9 +9,15 @@ const Hero = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    // Only enable mouse-parallax on devices with a fine pointer (desktop, not touch).
+    const mq = typeof window !== 'undefined' && window.matchMedia
+      ? window.matchMedia('(pointer: fine)')
+      : { matches: true };
+    if (!mq.matches) return;
+
     let raf = 0;
-    let targetTiltX = 0, targetTiltY = 0, targetRot = 0;
-    let curTiltX = 0, curTiltY = 0, curRot = 0;
+    let targetX = 0, targetY = 0;
+    let curX = 0, curY = 0;
 
     const handleMouse = (e) => {
       if (!containerRef.current) return;
@@ -21,27 +26,23 @@ const Hero = () => {
       const cy = rect.top + rect.height / 2;
       const dx = (e.clientX - cx) / Math.max(rect.width, 1);
       const dy = (e.clientY - cy) / Math.max(rect.height, 1);
-      // Limit input to ±1
       const nx = Math.max(-1, Math.min(1, dx));
       const ny = Math.max(-1, Math.min(1, dy));
-      targetTiltX = -ny * 22; // tilt up/down
-      targetTiltY = nx * 26;  // tilt left/right
-      targetRot = nx * 8;     // slight roll based on horizontal mouse
+      targetX = -ny * 16;
+      targetY = nx * 20;
     };
 
     const tick = () => {
-      // Lerp toward target for smooth motion
-      curTiltX += (targetTiltX - curTiltX) * 0.08;
-      curTiltY += (targetTiltY - curTiltY) * 0.08;
-      curRot += (targetRot - curRot) * 0.08;
+      curX += (targetX - curX) * 0.08;
+      curY += (targetY - curY) * 0.08;
       if (wheelRef.current) {
         wheelRef.current.style.transform =
-          `perspective(1100px) rotateX(${curTiltX.toFixed(2)}deg) rotateY(${curTiltY.toFixed(2)}deg) rotateZ(${curRot.toFixed(2)}deg)`;
+          `perspective(1200px) rotateX(${curX.toFixed(2)}deg) rotateY(${curY.toFixed(2)}deg)`;
       }
       raf = requestAnimationFrame(tick);
     };
 
-    window.addEventListener('mousemove', handleMouse);
+    window.addEventListener('mousemove', handleMouse, { passive: true });
     raf = requestAnimationFrame(tick);
     return () => {
       window.removeEventListener('mousemove', handleMouse);
@@ -106,20 +107,33 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right wheel — interactive 3D parallax (follows mouse), BMW M5 E39 style */}
-      <div ref={containerRef} className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s', perspective: '1100px' }}>
-        <div className="relative w-[460px] h-[460px] md:w-[560px] md:h-[560px] lg:w-[640px] lg:h-[640px]">
+      {/* Right wheel — real HRE photo, continuous slow spin (35s/rev) + mouse-parallax tilt on desktop */}
+      <div ref={containerRef} className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s', perspective: '1200px' }}>
+        <div className="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[520px] md:h-[520px] lg:w-[620px] lg:h-[620px]">
           {/* Soft halo */}
-          <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.25) 0%, rgba(197,200,204,0) 62%)'}} />
+          <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.28) 0%, rgba(197,200,204,0) 62%)'}} />
           {/* Floor shadow */}
           <div className="absolute left-1/2 -translate-x-1/2 bottom-2 w-[70%] h-6 rounded-[50%] bg-black/70 blur-2xl pointer-events-none" />
-          {/* 3D-tilted wheel */}
+          {/* 3D-tilted outer wrapper (responds to mouse on desktop) */}
           <div
             ref={wheelRef}
             className="absolute inset-0 flex items-center justify-center will-change-transform"
-            style={{ transformStyle: 'preserve-3d' }}
+            style={{ transformStyle: 'preserve-3d', transition: 'transform 60ms linear' }}
           >
-            <WheelSVG className="w-full h-full" />
+            {/* Inner wrapper continuously spins */}
+            <div className="w-full h-full animate-wheel-spin will-change-transform">
+              <img
+                src={HERO_WHEEL}
+                alt="Premium forged alloy wheel"
+                draggable="false"
+                className="w-full h-full object-contain select-none pointer-events-none"
+                style={{
+                  WebkitMaskImage: 'radial-gradient(circle at center, black 46%, transparent 50%)',
+                  maskImage: 'radial-gradient(circle at center, black 46%, transparent 50%)',
+                  filter: 'drop-shadow(0 26px 44px rgba(0,0,0,0.7)) brightness(1.05) contrast(1.04)',
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
