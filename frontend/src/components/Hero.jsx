@@ -1,55 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Phone, ArrowRight, Truck, Zap, Award, ShieldCheck } from 'lucide-react';
-import { BRAND, HERO_WHEEL, HERO_STATS_INLINE } from '../data/mock';
+import { BRAND, LOGO_URL, HERO_STATS_INLINE } from '../data/mock';
 
 const ICONS = { Truck, Zap, Award, ShieldCheck };
 
 const Hero = () => {
-  const wheelRef = useRef(null);
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    // Only enable mouse-parallax on devices with a fine pointer (desktop, not touch).
-    const mq = typeof window !== 'undefined' && window.matchMedia
-      ? window.matchMedia('(pointer: fine)')
-      : { matches: true };
-    if (!mq.matches) return;
-
-    let raf = 0;
-    let targetX = 0, targetY = 0;
-    let curX = 0, curY = 0;
-
-    const handleMouse = (e) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dx = (e.clientX - cx) / Math.max(rect.width, 1);
-      const dy = (e.clientY - cy) / Math.max(rect.height, 1);
-      const nx = Math.max(-1, Math.min(1, dx));
-      const ny = Math.max(-1, Math.min(1, dy));
-      targetX = -ny * 16;
-      targetY = nx * 20;
-    };
-
-    const tick = () => {
-      curX += (targetX - curX) * 0.08;
-      curY += (targetY - curY) * 0.08;
-      if (wheelRef.current) {
-        wheelRef.current.style.transform =
-          `perspective(1200px) rotateX(${curX.toFixed(2)}deg) rotateY(${curY.toFixed(2)}deg)`;
-      }
-      raf = requestAnimationFrame(tick);
-    };
-
-    window.addEventListener('mousemove', handleMouse, { passive: true });
-    raf = requestAnimationFrame(tick);
-    return () => {
-      window.removeEventListener('mousemove', handleMouse);
-      cancelAnimationFrame(raf);
-    };
-  }, []);
-
   return (
   <section id="top" className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
     {/* Gold spotlight on right */}
@@ -107,34 +62,21 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right wheel — real HRE photo, continuous slow spin (35s/rev) + mouse-parallax tilt on desktop */}
-      <div ref={containerRef} className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s', perspective: '1200px' }}>
-        <div className="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[520px] md:h-[520px] lg:w-[620px] lg:h-[620px]">
+      {/* Right side — static brand mark */}
+      <div className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s' }}>
+        <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] lg:w-[560px] lg:h-[560px]">
           {/* Soft halo */}
-          <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.28) 0%, rgba(197,200,204,0) 62%)'}} />
+          <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.22) 0%, rgba(197,200,204,0) 62%)'}} />
           {/* Floor shadow */}
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-2 w-[70%] h-6 rounded-[50%] bg-black/70 blur-2xl pointer-events-none" />
-          {/* 3D-tilted outer wrapper (responds to mouse on desktop) */}
-          <div
-            ref={wheelRef}
-            className="absolute inset-0 flex items-center justify-center will-change-transform"
-            style={{ transformStyle: 'preserve-3d', transition: 'transform 60ms linear' }}
-          >
-            {/* Inner wrapper continuously spins */}
-            <div className="w-full h-full animate-wheel-spin will-change-transform">
-              <img
-                src={HERO_WHEEL}
-                alt="Premium forged alloy wheel"
-                draggable="false"
-                className="w-full h-full object-contain select-none pointer-events-none"
-                style={{
-                  WebkitMaskImage: 'radial-gradient(circle at center, black 46%, transparent 50%)',
-                  maskImage: 'radial-gradient(circle at center, black 46%, transparent 50%)',
-                  filter: 'drop-shadow(0 26px 44px rgba(0,0,0,0.7)) brightness(1.05) contrast(1.04)',
-                }}
-              />
-            </div>
-          </div>
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-2 w-[60%] h-5 rounded-[50%] bg-black/60 blur-2xl pointer-events-none" />
+          {/* Brand logo (static) */}
+          <img
+            src={LOGO_URL}
+            alt={BRAND.name}
+            draggable="false"
+            className="absolute inset-0 w-full h-full object-contain select-none pointer-events-none"
+            style={{ filter: 'drop-shadow(0 22px 38px rgba(0,0,0,0.65))' }}
+          />
         </div>
       </div>
     </div>
