@@ -1,11 +1,59 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Phone, ArrowRight, Truck, Zap, Award, ShieldCheck } from 'lucide-react';
-import { BRAND, HERO_STATS_INLINE } from '../data/mock';
-import WheelSVG from './WheelSVG';
+import { BRAND, HERO_WHEEL, HERO_STATS_INLINE } from '../data/mock';
 
 const ICONS = { Truck, Zap, Award, ShieldCheck };
 
+// Sparkle dot positions around the wheel (% relative to container)
+const SPARKLES = [
+  { top: '8%', left: '18%', delay: '0s' },
+  { top: '14%', right: '12%', delay: '0.6s' },
+  { top: '38%', left: '4%', delay: '1.2s' },
+  { top: '52%', right: '6%', delay: '0.3s' },
+  { bottom: '14%', left: '14%', delay: '1.8s' },
+  { bottom: '8%', right: '20%', delay: '0.9s' },
+  { top: '24%', left: '46%', delay: '2.1s' },
+  { bottom: '22%', right: '40%', delay: '1.5s' },
+];
+
 const Hero = () => {
+  const tiltRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const mq = typeof window !== 'undefined' && window.matchMedia
+      ? window.matchMedia('(pointer: fine)')
+      : { matches: true };
+    if (!mq.matches) return;
+
+    let raf = 0;
+    let tx = 0, ty = 0, cx = 0, cy = 0;
+
+    const onMove = (e) => {
+      if (!containerRef.current) return;
+      const r = containerRef.current.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / Math.max(r.width, 1);
+      const dy = (e.clientY - (r.top + r.height / 2)) / Math.max(r.height, 1);
+      tx = -Math.max(-1, Math.min(1, dy)) * 14;
+      ty = Math.max(-1, Math.min(1, dx)) * 18;
+    };
+    const tick = () => {
+      cx += (tx - cx) * 0.08;
+      cy += (ty - cy) * 0.08;
+      if (tiltRef.current) {
+        tiltRef.current.style.transform =
+          `perspective(1000px) rotateX(${cx.toFixed(2)}deg) rotateY(${cy.toFixed(2)}deg)`;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    window.addEventListener('mousemove', onMove, { passive: true });
+    raf = requestAnimationFrame(tick);
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
   <section id="top" className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
     {/* Gold spotlight on right */}
@@ -63,16 +111,51 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right side — 3D-styled SVG wheel, continuous spin */}
-      <div className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s' }}>
+      {/* Right side — real HRE wheel photo, silver-tinted, 18s spin + mouse 3D parallax + sparkles */}
+      <div
+        ref={containerRef}
+        className="lg:col-span-6 relative fade-up flex items-center justify-center"
+        style={{ animationDelay: '0.15s', perspective: '1000px' }}
+      >
         <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] lg:w-[560px] lg:h-[560px]">
-          {/* Soft halo */}
-          <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.22) 0%, rgba(197,200,204,0) 62%)'}} />
+          {/* Ambient silver glow behind */}
+          <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(197,200,204,0.32) 0%, rgba(197,200,204,0) 60%)' }} />
           {/* Floor shadow */}
           <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[60%] h-5 rounded-[50%] bg-black/70 blur-2xl pointer-events-none" />
-          {/* Spinning 3D wheel */}
-          <div className="absolute inset-0 flex items-center justify-center animate-wheel-spin">
-            <WheelSVG className="w-full h-full" />
+
+          {/* Sparkle dots */}
+          {SPARKLES.map((s, i) => (
+            <span
+              key={i}
+              className="sparkle-dot"
+              style={{
+                top: s.top,
+                left: s.left,
+                right: s.right,
+                bottom: s.bottom,
+                animationDelay: s.delay,
+              }}
+            />
+          ))}
+
+          {/* 3D-tilt wrapper (mouse parallax on desktop) */}
+          <div
+            ref={tiltRef}
+            className="absolute inset-0 flex items-center justify-center will-change-transform"
+            style={{ transition: 'transform 60ms linear', transformStyle: 'preserve-3d' }}
+          >
+            {/* Wheel image — continuous spin + silver tint filter */}
+            <img
+              src={HERO_WHEEL}
+              alt="Premium forged alloy wheel"
+              draggable="false"
+              className="w-full h-full object-contain select-none pointer-events-none animate-wheel-spin"
+              style={{
+                WebkitMaskImage: 'radial-gradient(circle at center, black 46%, transparent 50%)',
+                maskImage: 'radial-gradient(circle at center, black 46%, transparent 50%)',
+                filter: 'sepia(0.25) saturate(1.3) brightness(0.75) hue-rotate(-15deg) drop-shadow(0 24px 40px rgba(0,0,0,0.7))',
+              }}
+            />
           </div>
         </div>
       </div>

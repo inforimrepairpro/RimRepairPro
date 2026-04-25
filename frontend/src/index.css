@@ -136,17 +136,32 @@ code {
 }
 .animate-progress { animation: progress 2.5s ease-in-out infinite; }
 
-/* Continuous wheel spin (matches Rim Repair Joe's reference — 35s per revolution) */
+/* Continuous wheel spin — 18s per revolution */
 @keyframes wheelSpin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 .animate-wheel-spin {
-    animation: wheelSpin 35s linear infinite;
+    animation: wheelSpin 18s linear infinite;
     transform-origin: center center;
     will-change: transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+}
+
+/* Sparkle dots — small twinkling specks around the wheel */
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.4); }
+    50% { opacity: 1; transform: scale(1); }
+}
+.sparkle-dot {
+    position: absolute;
+    width: 4px; height: 4px;
+    border-radius: 9999px;
+    background: #E8EAED;
+    box-shadow: 0 0 8px rgba(232,234,237,0.8);
+    animation: sparkle 3.2s ease-in-out infinite;
+    pointer-events: none;
 }
 
 /* Mobile / iOS optimizations */
