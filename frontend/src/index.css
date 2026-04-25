@@ -153,15 +153,11 @@ code {
 html, body {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
-    overflow-x: hidden;
 }
 body {
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: none;
 }
-
-/* Prevent horizontal overflow on root */
-#root { overflow-x: hidden; }
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {

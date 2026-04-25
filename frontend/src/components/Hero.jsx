@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, ArrowRight, Truck, Zap, Award, ShieldCheck } from 'lucide-react';
-import { BRAND, LOGO_URL, HERO_STATS_INLINE } from '../data/mock';
+import { BRAND, HERO_STATS_INLINE } from '../data/mock';
+import WheelSVG from './WheelSVG';
 
 const ICONS = { Truck, Zap, Award, ShieldCheck };
 
@@ -62,21 +63,17 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right side — static brand mark */}
+      {/* Right side — 3D-styled SVG wheel, continuous spin */}
       <div className="lg:col-span-6 relative fade-up flex items-center justify-center" style={{ animationDelay: '0.15s' }}>
         <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] lg:w-[560px] lg:h-[560px]">
           {/* Soft halo */}
           <div className="absolute inset-0 rounded-full blur-3xl pointer-events-none" style={{background: 'radial-gradient(circle, rgba(197,200,204,0.22) 0%, rgba(197,200,204,0) 62%)'}} />
           {/* Floor shadow */}
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-2 w-[60%] h-5 rounded-[50%] bg-black/60 blur-2xl pointer-events-none" />
-          {/* Brand logo (static) */}
-          <img
-            src={LOGO_URL}
-            alt={BRAND.name}
-            draggable="false"
-            className="absolute inset-0 w-full h-full object-contain select-none pointer-events-none"
-            style={{ filter: 'drop-shadow(0 22px 38px rgba(0,0,0,0.65))' }}
-          />
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[60%] h-5 rounded-[50%] bg-black/70 blur-2xl pointer-events-none" />
+          {/* Spinning 3D wheel */}
+          <div className="absolute inset-0 flex items-center justify-center animate-wheel-spin">
+            <WheelSVG className="w-full h-full" />
+          </div>
         </div>
       </div>
     </div>
