@@ -44,7 +44,6 @@ export const BRANDS_TRUSTED = [
 
 export const SERVICES = [
   { n: '01', title: 'Curb Rash Repair', desc: 'Precision grinding and refinishing eliminates curb damage, restoring your rims to flawless factory finish.' },
-  { n: '02', title: 'Bent Wheel Straightening', desc: 'Hydraulic technology restores factory-true roundness, eliminating vibrations and ensuring balanced performance.' },
   { n: '03', popular: true, title: 'Custom Powder Coating', desc: 'OEM-spec color matching and multi-stage powder coating. Factory restoration to bespoke custom finishes.' },
   { n: '04', title: 'Chrome & Polish', desc: 'Mirror-like chrome restoration or brilliant polished finish that turns heads wherever you go.' },
   { n: '05', title: 'Wheel Welding', desc: 'Expert TIG welding for cracked or damaged wheels. Structural repair maintaining wheel integrity.' },
@@ -62,7 +61,6 @@ export const HERO_WHEEL = 'https://customer-assets.emergentagent.com/job_pro-rim
 
 export const PRICING = [
   { title: 'Curb Rash Repair', price: '$85', unit: '/wheel', features: ['Surface scratch removal','Edge restoration','OEM color match','Clear coat finish','Same-day available'] },
-  { title: 'Bent Wheel Straightening', price: '$125', unit: '/wheel', features: ['Computerized measurement','Hydraulic straightening','Runout correction','Balance included','Safety certified'] },
   { title: 'Custom Refinishing', price: '$175', unit: '/wheel', popular: true, features: ['Full strip & prep','Custom color options','Powder coat available','Premium clear coat','Lifetime warranty'] },
   { title: 'Full Restoration', price: '$250', unit: '/wheel', features: ['Complete damage repair','Straightening included','Full refinish','Chrome/polish options','Free pickup available'] },
 ];
