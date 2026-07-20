@@ -77,7 +77,7 @@ const Hero = () => {
         <p className="mt-4 text-[18px] md:text-[20px] text-[#C5C8CC]/85 font-medium">We Come To You</p>
 
         <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-[#8B8982]">
-          Premium mobile wheel restoration. Curb rash, bent wheels, custom refinishing — right at your doorstep. Same-day service available.
+          Premium mobile wheel restoration. Curb rash, scuffed rims, custom refinishing — right at your doorstep. Same-day service available.
         </p>
 
         <div className="mt-9 flex flex-wrap items-center gap-4">
