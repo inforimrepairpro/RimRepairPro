@@ -11,7 +11,7 @@ const Footer = () => (
             <img src={LOGO_URL} alt={BRAND.name} className="h-24 w-auto object-contain" />
           </div>
           <p className="mt-5 text-[14px] leading-relaxed text-[#8B8982] max-w-sm">
-            Premium mobile wheel restoration across Greater Los Angeles. Curb rash, bent wheels, powder coating, chrome — same-day service, lifetime warranty.
+            Premium mobile wheel restoration across Greater Los Angeles. Curb rash, scuffed wheels, powder coating, chrome — same-day service, lifetime warranty.
           </p>
         </div>
 
