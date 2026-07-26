@@ -2,15 +2,21 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18180382680"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9Z3V12JRN"></script>
 
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
 
+        // Google Analytics 4
+        gtag('config', 'G-W9Z3V12JRN');
+
+        // Google Ads
         gtag('config', 'AW-18180382680');
     </script>
 
@@ -21,26 +27,40 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=yes" />
-    <meta name="description" content="Rim Repair Pro — premium mobile wheel restoration in Greater Los Angeles. Curb rash, scuffed wheels, custom refinishing. Same-day service. Call (747) 717-0060." />
+
+    <meta
+        name="description"
+        content="Rim Repair Pro — premium mobile wheel restoration in Greater Los Angeles. Curb rash, scuffed wheels, custom refinishing. Same-day service. Call (747) 717-0060."
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet" />
 
-    <title>Rim Repair Pro — Premium Mobile Wheel Restoration | Los Angeles</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+        rel="stylesheet"
+    />
+
+    <title>
+        Rim Repair Pro — Premium Mobile Wheel Restoration | Los Angeles
+    </title>
 
     <script>
-        window.addEventListener("error", function (e) {
-            if (
-                e.error instanceof DOMException &&
-                e.error.name === "DataCloneError" &&
-                e.message &&
-                e.message.includes("PerformanceServerTiming")
-            ) {
-                e.stopImmediatePropagation();
-                e.preventDefault();
-            }
-        }, true);
+        window.addEventListener(
+            "error",
+            function (e) {
+                if (
+                    e.error instanceof DOMException &&
+                    e.error.name === "DataCloneError" &&
+                    e.message &&
+                    e.message.includes("PerformanceServerTiming")
+                ) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                }
+            },
+            true
+        );
     </script>
 
     <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
@@ -48,8 +68,84 @@
 
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
     <div id="root"></div>
 
-    <!-- Остальной код (PostHog и т.д.) остается без изменений -->
+    <script>
+        !(function (t, e) {
+            var o, n, p, r;
+            e.__SV ||
+                ((window.posthog = e),
+                (e._i = []),
+                (e.init = function (i, s, a) {
+                    function g(t, e) {
+                        var o = e.split(".");
+                        2 == o.length && ((t = t[o[0]]), (e = o[1]));
+                        t[e] = function () {
+                            t.push(
+                                [e].concat(
+                                    Array.prototype.slice.call(arguments, 0)
+                                )
+                            );
+                        };
+                    }
+
+                    p = t.createElement("script");
+                    p.type = "text/javascript";
+                    p.crossOrigin = "anonymous";
+                    p.async = true;
+                    p.src =
+                        s.api_host.replace(
+                            ".i.posthog.com",
+                            "-assets.i.posthog.com"
+                        ) + "/static/array.js";
+
+                    r = t.getElementsByTagName("script")[0];
+                    r.parentNode.insertBefore(p, r);
+
+                    var u = e;
+
+                    if (a !== undefined) {
+                        u = e[a] = [];
+                    } else {
+                        a = "posthog";
+                    }
+
+                    u.people = u.people || [];
+
+                    u.toString = function (t) {
+                        var e = "posthog";
+                        if (a !== "posthog") e += "." + a;
+                        if (!t) e += " (stub)";
+                        return e;
+                    };
+
+                    u.people.toString = function () {
+                        return u.toString(1) + ".people (stub)";
+                    };
+
+                    o =
+                        "init capture identify alias reset register unregister set_config get_property".split(
+                            " "
+                        );
+
+                    for (n = 0; n < o.length; n++) {
+                        g(u, o[n]);
+                    }
+
+                    e._i.push([i, s, a]);
+                }),
+                (e.__SV = 1));
+        })(document, window.posthog || []);
+
+        posthog.init("phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs", {
+            api_host: "https://us.i.posthog.com",
+            person_profiles: "identified_only",
+            session_recording: {
+                recordCrossOriginIframes: true,
+                capturePerformance: false,
+            },
+        });
+    </script>
 </body>
 </html>
