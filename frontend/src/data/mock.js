@@ -61,10 +61,10 @@ export const GALLERY = [
 export const HERO_WHEEL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/ht806ru0_download.jpg';
 
 export const PRICING = [
-  { title: 'Curb Rash Repair', price: '$85', unit: '/wheel', features: ['Surface scratch removal','Edge restoration','OEM color match','Clear coat finish','Same-day available'] },
-  { title: 'Bent Wheel Straightening', price: '$125', unit: '/wheel', features: ['Computerized measurement','Hydraulic straightening','Runout correction','Balance included','Safety certified'] },
-  { title: 'Custom Refinishing', price: '$175', unit: '/wheel', popular: true, features: ['Full strip & prep','Custom color options','Powder coat available','Premium clear coat','Lifetime warranty'] },
-  { title: 'Full Restoration', price: '$250', unit: '/wheel', features: ['Complete damage repair','Straightening included','Full refinish','Chrome/polish options','Free pickup available'] },
+  { title: 'Curb Rash Repair', price: '$100', unit: '/wheel', features: ['Surface scratch removal','Edge restoration','OEM color match','Clear coat finish','Same-day available'] },
+  { title: 'Premium Wheel Polish', price: '$Get Quote', unit: '/wheel', features: ['Deep Clean & Polish','Gloss Enhancement','Light Surface Imperfection Removal','Protective Coating','Safety certified'] },
+  { title: 'Custom Refinishing', price: '$Get Quote', unit: '/wheel', popular: true, features: ['Any Color of Your Choice','Gloss, Satin & Matte Finishes','Complete Wheel Refinish','OEM & Custom Color Matching','Durable Automotive Paint Finish'] },
+  { title: 'Complete Wheel Restoration Package', price: '$Get Quote', unit: '/wheel', features: ['Complete damage repair','Full Wheel Refinishing','Any Color & Finish','Premium Clear Coat','Same-Day Mobile Service'] },
 ];
 
 export const PROCESS = [
