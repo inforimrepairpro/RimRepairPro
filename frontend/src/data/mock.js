@@ -39,7 +39,7 @@ export const FEATURES = [
 ];
 
 export const BRANDS_TRUSTED = [
-  'Porsche','Ferrari','Lamborghini','Mercedes-AMG','BMW M','Tesla','Audi RS','Bentley','Rolls-Royce','McLaren','Aston Martin','Range Rover'
+  'Porsche','Ferrari','Lamborghini','Mercedes','BMW','Tesla','Audi','Rolls-Royce','McLaren','Aston Martin','Range Rover'
 ];
 
 export const SERVICES = [
