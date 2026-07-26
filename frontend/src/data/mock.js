@@ -44,10 +44,10 @@ export const BRANDS_TRUSTED = [
 
 export const SERVICES = [
   { n: '01', title: 'Curb Rash Repair', desc: 'Precision grinding and refinishing eliminates curb damage, restoring your rims to flawless factory finish.' },
-  { n: '02', title: 'Bent Wheel Straightening', desc: 'Hydraulic technology restores factory-true roundness, eliminating vibrations and ensuring balanced performance.' },
-  { n: '03', popular: true, title: 'Custom Powder Coating', desc: 'OEM-spec color matching and multi-stage powder coating. Factory restoration to bespoke custom finishes.' },
-  { n: '04', title: 'Chrome & Polish', desc: 'Mirror-like chrome restoration or brilliant polished finish that turns heads wherever you go.' },
-  { n: '05', title: 'Wheel Welding', desc: 'Expert TIG welding for cracked or damaged wheels. Structural repair maintaining wheel integrity.' },
+  { n: '02', title: 'More Wheels, More Savings', desc: 'Get a special discount when you book 3 or more curb rash repairs. Same-day mobile service available.' },
+  { n: '03', popular: true, title: 'Lease Return Wheel Repair', desc: 'Avoid expensive dealership charges. Restore your wheels before returning your leased or rental vehicle and save with our professional mobile service.' },
+  { n: '04', title: 'Polish', desc: 'Mirror-like chrome restoration or brilliant polished finish that turns heads wherever you go.' },
+  { n: '05', title: 'Wheel Color Change', desc: 'Give your wheels a completely new look with a professional color change. Choose from gloss, satin, or matte finishes—all without powder coating.' },
   { n: '06', title: 'Mobile Service', desc: 'We come to you. Fully equipped mobile workshop brings professional repair right to your doorstep.' },
 ];
 
