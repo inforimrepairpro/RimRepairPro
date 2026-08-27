@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,16 +22,22 @@
 
     <!-- Google Ads website call conversion -->
     <script>
-        gtag('config', 'AW-18180382680/OK33CP2Lw-gcENi_it1D', {
+        gtag('config', 'AW-18180382680/0K33CP2Lw-gcENi_it1D', {
             'phone_conversion_number': '(747) 717-0060'
         });
     </script>
 
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <meta name="theme-color" content="#0a0a0b" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=yes" />
 
@@ -42,7 +47,11 @@
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    />
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
@@ -82,13 +91,17 @@
     <script>
         !(function (t, e) {
             var o, n, p, r;
+
             e.__SV ||
                 ((window.posthog = e),
                 (e._i = []),
                 (e.init = function (i, s, a) {
                     function g(t, e) {
                         var o = e.split(".");
-                        2 == o.length && ((t = t[o[0]]), (e = o[1]));
+
+                        2 == o.length &&
+                            ((t = t[o[0]]), (e = o[1]));
+
                         t[e] = function () {
                             t.push(
                                 [e].concat(
@@ -102,6 +115,7 @@
                     p.type = "text/javascript";
                     p.crossOrigin = "anonymous";
                     p.async = true;
+
                     p.src =
                         s.api_host.replace(
                             ".i.posthog.com",
@@ -123,8 +137,10 @@
 
                     u.toString = function (t) {
                         var e = "posthog";
+
                         if (a !== "posthog") e += "." + a;
                         if (!t) e += " (stub)";
+
                         return e;
                     };
 
@@ -146,14 +162,17 @@
                 (e.__SV = 1));
         })(document, window.posthog || []);
 
-        posthog.init("phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs", {
-            api_host: "https://us.i.posthog.com",
-            person_profiles: "identified_only",
-            session_recording: {
-                recordCrossOriginIframes: true,
-                capturePerformance: false,
-            },
-        });
+        posthog.init(
+            "phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs",
+            {
+                api_host: "https://us.i.posthog.com",
+                person_profiles: "identified_only",
+                session_recording: {
+                    recordCrossOriginIframes: true,
+                    capturePerformance: false,
+                },
+            }
+        );
     </script>
 </body>
 </html>
