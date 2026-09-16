@@ -5,6 +5,7 @@ import Features from '../components/Features';
 import Services from '../components/Services';
 import Gallery from '../components/Gallery';
 import Process from '../components/Process';
+import Reviews from '../components/Reviews';
 import ServiceAreas from '../components/ServiceAreas';
 import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
@@ -18,6 +19,7 @@ const Home = () => (
     <Services />
     <Gallery />
     <Process />
+    <Reviews />
     <CTA />
     <ServiceAreas />
     <FAQ />
