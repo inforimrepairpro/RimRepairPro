@@ -10,10 +10,13 @@ export const BRAND = {
   city: 'Los Angeles',
 };
 
+export const GOOGLE_PROFILE_URL = 'https://share.google/PhJBocTOSLuX8EsDI';
+
 export const NAV_LINKS = [
   { label: 'Services', href: '#services' },
   { label: 'Before & After', href: '#gallery' },
   { label: 'How It Works', href: '#process' },
+  { label: 'Reviews', href: '#reviews' },
   { label: 'Service Areas', href: '#areas' },
   { label: 'FAQ', href: '#faq' },
 ];
@@ -72,7 +75,13 @@ export const PROCESS = [
   { n: '04', title: 'We Come To You', desc: 'Our mobile service arrives at your location and completes the scheduled work on-site.' },
 ];
 
-export const TESTIMONIALS = [];
+export const TESTIMONIALS = [
+  { name: 'Syuzanna Sargsian', rating: 5, time: '2 months ago', text: 'I’m really happy with the service. The technician came to me and fixed my car wheels. Everything was done quickly and properly. Wheels look much better now, like almost new. Good communication, friendly guy and knows his job. I’m satisfied with the result and definitely would recommend.' },
+  { name: 'Karen Kostanyan', rating: 5, time: '2 months ago', text: 'Super fast and professional service. They came right to my house and fixed a nasty curb rash on my wheel in under an hour. Literally looks brand new. Highly recommend Rim Repair Pro!' },
+  { name: 'Adam C.', rating: 5, time: '2 months ago', text: 'This company is very professional, on time, reasonable prices and very friendly! But most of all, these guy’s are magicians! Especially the Technician that came to my house to repair my rim. His name is Sargis! If you have a Rim Rash, I highly suggest you call this company and make an appointment!' },
+  { name: 'Giana Taylor', rating: 5, time: '2 months ago', text: 'Sargis was very helpful and I would definitely recommend his services. He was efficient with his work and got the job done in a sufficient amount of time. Not to mention, handled business with respect and even gratitude.' },
+  { name: 'Jonathan Gyarmati', rating: 5, time: '3 days ago', text: 'My wheel was damaged by the car wash after going down the conveyor and probably rubbing the rail. Contacted these guys in the morning and they were at my house the same afternoon and after about 30 minutes it looks brand new. Couldn’t be happier. Beyond friendly too.' },
+];
 
 export const FAQS = [
   { q: 'How do I get a quote?', a: 'Send us clear photos of the wheel damage along with your address. We will review the job and text you back with the next steps.' },
