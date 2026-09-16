@@ -1,39 +1,41 @@
 import React from 'react';
-import { Camera, MessageSquareText, CalendarCheck, Truck } from 'lucide-react';
+import { Camera, MessageSquareText, CalendarCheck, Truck, ArrowUpRight } from 'lucide-react';
 import { PROCESS } from '../data/mock';
 
 const icons = [Camera, MessageSquareText, CalendarCheck, Truck];
 
 const Process = () => (
-  <section className="bg-white py-20 md:py-28 relative overflow-hidden">
-    <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-[#64d8ff]/10 blur-3xl" />
-    <div className="max-w-7xl mx-auto px-5 md:px-8 relative">
-      <div className="grid lg:grid-cols-12 gap-8 items-end mb-14">
+  <section className="relative overflow-hidden bg-[#f7f6f2] py-16 text-[#111315] md:py-20">
+    <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#e8b94e]/10 blur-3xl" />
+    <div className="relative mx-auto max-w-[1380px] px-5 md:px-8">
+      <div className="mb-10 grid items-end gap-6 border-b border-zinc-200 pb-8 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <span className="text-[11px] uppercase tracking-[.3em] font-black text-[#176a76]">How It Works</span>
-          <h2 className="mt-5 font-display text-[50px] md:text-[76px] leading-[.94] font-bold tracking-[-.035em] text-[#081526]">From damaged rim<br/><span className="text-[#2f7cff]">to appointment.</span></h2>
+          <span className="text-[10px] font-black uppercase tracking-[.26em] text-[#b78520]">How It Works</span>
+          <h2 className="mt-3 font-display text-[46px] font-bold leading-[.94] tracking-[-.035em] md:text-[68px]">From wheel damage<br/><span className="text-[#b78520]">to mobile service.</span></h2>
         </div>
-        <p className="lg:col-span-5 lg:pl-12 text-[16px] md:text-[18px] leading-relaxed text-slate-600">No need to drive around looking for a wheel shop. Start with photos and your location, then we coordinate the mobile service with you.</p>
+        <p className="max-w-xl text-[15px] leading-7 text-zinc-600 lg:col-span-5 lg:justify-self-end">Start with photos and your service address. We review the details, coordinate the appointment and bring the mobile setup to you.</p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {PROCESS.map((p, i) => {
           const Icon = icons[i] || Truck;
           return (
-            <div key={i} className="group relative rounded-[26px] border border-slate-200 bg-[#f7f3eb] p-7 md:p-8 min-h-[285px] overflow-hidden hover:border-[#2f7cff]/40 transition-colors">
-              <div className="absolute -right-5 -top-8 text-[110px] font-black leading-none text-[#081526]/[.035]">{p.n}</div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#081526] text-[#64d8ff]"><Icon className="w-5 h-5"/></div>
-              <div className="mt-10 text-[10px] font-black uppercase tracking-[.25em] text-[#2f7cff]">Step {p.n}</div>
-              <h3 className="mt-3 text-[23px] font-bold tracking-tight text-[#081526]">{p.title}</h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-slate-600">{p.desc}</p>
+            <div key={i} className="group relative min-h-[270px] overflow-hidden rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_14px_35px_-28px_rgba(0,0,0,.4)] transition-all hover:-translate-y-1 hover:border-[#d5a73f]/60 hover:shadow-xl md:p-7">
+              <div className="absolute -right-3 -top-7 text-[100px] font-black leading-none text-black/[.035]">{p.n}</div>
+              <div className="flex items-center justify-between">
+                <div className="grid h-11 w-11 place-items-center rounded-lg bg-[#111315] text-[#e8b94e]"><Icon className="h-5 w-5"/></div>
+                <span className="text-[10px] font-black uppercase tracking-[.2em] text-[#b78520]">Step {p.n}</span>
+              </div>
+              <h3 className="mt-9 text-[22px] font-extrabold tracking-tight">{p.title}</h3>
+              <p className="mt-3 text-[13px] leading-6 text-zinc-600">{p.desc}</p>
             </div>
           );
         })}
       </div>
 
-      <div className="mt-8 rounded-[24px] bg-[#081526] px-6 py-6 md:px-9 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-        <div><div className="text-[11px] font-black uppercase tracking-[.25em] text-[#64d8ff]">Ready to start?</div><div className="mt-2 text-xl md:text-2xl font-bold text-white">Take a photo of the wheel and request your quote.</div></div>
-        <a href="#contact" className="inline-flex justify-center rounded-xl bg-[#2f7cff] px-6 py-4 text-sm font-black text-white hover:bg-[#438aff] transition">Send Photos & Get Quote</a>
+      <div className="mt-7 flex flex-col gap-5 rounded-xl bg-[#0c0f12] px-6 py-6 text-white md:flex-row md:items-center md:justify-between md:px-8">
+        <div><div className="text-[10px] font-black uppercase tracking-[.22em] text-[#e8b94e]">Ready to start?</div><div className="mt-1.5 text-xl font-extrabold md:text-2xl">Take a wheel photo and request your quote.</div></div>
+        <a href="#contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#e8b94e] px-6 py-4 text-sm font-black text-[#111315] transition hover:bg-[#f0c765]">Send Photos & Get Quote <ArrowUpRight className="h-4 w-4"/></a>
       </div>
     </div>
   </section>
