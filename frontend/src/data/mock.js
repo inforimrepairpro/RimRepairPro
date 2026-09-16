@@ -14,7 +14,6 @@ export const NAV_LINKS = [
   { label: 'Services', href: '#services' },
   { label: 'Before & After', href: '#gallery' },
   { label: 'How It Works', href: '#process' },
-  { label: 'Reviews', href: '#reviews' },
   { label: 'Service Areas', href: '#areas' },
   { label: 'FAQ', href: '#faq' },
 ];
