@@ -15,7 +15,7 @@ export const GOOGLE_PROFILE_URL = 'https://share.google/PhJBocTOSLuX8EsDI';
 
 export const NAV_LINKS = [
   { label: 'Services', href: '#services' },
-  { label: 'Before & After', href: '#gallery' },
+  { label: 'Our Work', href: '#gallery' },
   { label: 'How It Works', href: '#process' },
   { label: 'Reviews', href: '#reviews' },
   { label: 'Service Areas', href: '#areas' },
@@ -58,17 +58,21 @@ export const SERVICES = [
 export const SERVICE_IMAGES = [
   '/SERV.JPG',
   '/services.JPG',
-  '/SERV.JPG',
-  '/services.JPG',
-  '/SERV.JPG',
-  '/services.JPG',
+  '/Rim-11.JPG',
+  '/Rim-18.JPG',
+  '/Rim-24.JPG',
+  '/Rim-31.JPG',
 ];
 
 export const GALLERY = [
-  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/pm142zyh_hf_20260424_204650_7c55fbd4-7b88-4a51-a256-5204ed986ba6.png',
-  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/9e8vzlj0_hf_20260424_204304_bf194c8a-63eb-4c2e-b916-ea8c51c927f2.png',
-  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/853z266j_hf_20260424_203317_9c302291-afdb-446e-a79e-39bf3fa1f907.png',
-  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/3zxk9c3a_hf_20260424_203121_a130f5c3-d2a3-4de2-95df-a7b73c8e9731.png',
+  '/Rim-11.JPG', '/Rim-12.JPG', '/Rim-13.JPG', '/Rim-14.JPG',
+  '/Rim-15.JPG', '/Rim-16.JPG', '/Rim-17.JPG', '/Rim-18.JPG',
+  '/Rim-19.JPG', '/Rim-20.JPG', '/Rim-21.JPG', '/Rim-22.JPG',
+  '/Rim-23.JPG', '/Rim-24.JPG', '/Rim-25.JPG', '/Rim-26.JPG',
+  '/Rim-27.JPG', '/Rim-28.JPG', '/Rim-29.JPG', '/Rim-30.JPG',
+  '/Rim-31.JPG', '/Rim-32.JPG', '/Rim-33.JPG', '/Rim-34.JPG',
+  '/Rim-35.JPG', '/Rim-36.JPG', '/Rim-37.JPG', '/Rim-38.JPG',
+  '/Rim-39.JPG', '/Rim-40.JPG', '/Rim-41.JPG', '/Rim-42.JPG', '/Rim-43.JPG',
 ];
 
 export const PRICING = [
