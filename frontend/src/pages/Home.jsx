@@ -12,7 +12,7 @@ import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 
 const Home = () => (
-  <div className="min-h-screen bg-[#081526]">
+  <div className="min-h-screen bg-[#08090a]">
     <Navbar />
     <Hero />
     <Features />
