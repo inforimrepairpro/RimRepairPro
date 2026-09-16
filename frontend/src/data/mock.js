@@ -1,95 +1,100 @@
-export const LOGO_URL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/tra44lg4_hf_20260424_224219_35c61e49-59b5-4941-b4f7-ff5cf708e64c-removebg-preview.png';
-
 export const BRAND = {
   name: 'Rim Repair Pro',
   nameUpper: 'RIM REPAIR PRO',
   phone: '(747) 717-0060',
   phoneTel: '7477170060',
-  tagline: 'Mobile Service · We Come To You',
+  tagline: 'Mobile Rim Repair · We Come To You',
   city: 'Los Angeles',
 };
 
 export const NAV_LINKS = [
   { label: 'Services', href: '#services' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Gallery', href: '#gallery' },
+  { label: 'Before & After', href: '#gallery' },
+  { label: 'How It Works', href: '#process' },
   { label: 'Reviews', href: '#reviews' },
+  { label: 'Service Areas', href: '#areas' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
-];
-
-export const HERO_STATS_INLINE = [
-  { icon: 'Truck', label: 'Mobile', sub: 'We Come To You' },
-  { icon: 'Zap', label: 'Same Day', sub: 'Service' },
-  { icon: 'Award', label: '5+', sub: 'Years Exp.' },
-];
-
-export const STATS = [
-  { value: 5, suffix: '+', label: 'Years Experience' },
-  { value: 1416, suffix: '+', label: 'Wheels Restored' },
-  { value: 141, suffix: '+', label: '5-Star Reviews' },
-  { value: 99, suffix: '%', label: 'Satisfaction' },
-];
-
-export const FEATURES = [
-  { icon: 'Zap', title: 'Same Day Service', desc: 'Most repairs completed the same day. Get back on the road fast.' },
-  { icon: 'Truck', title: 'Mobile Repair', desc: 'We come to you. Fully equipped mobile workshop at your door.' },
-  { icon: 'ShieldCheck', title: 'Warranty Backed', desc: 'Every repair backed by our satisfaction guarantee.' },
-  { icon: 'Star', title: '5-Star Rated', desc: 'Hundreds of 5-star reviews from satisfied customers.' },
-];
-
-export const BRANDS_TRUSTED = [
-  'Porsche','Ferrari','Lamborghini','Mercedes','BMW','Tesla','Audi','Rolls-Royce','McLaren','Aston Martin','Range Rover'
 ];
 
 export const SERVICES = [
-  { n: '01', title: 'Curb Rash Repair', desc: 'Precision grinding and refinishing eliminates curb damage, restoring your rims to flawless factory finish.' },
-  { n: '02', title: 'More Wheels, More Savings', desc: 'Get a special discount when you book 3 or more curb rash repairs. Same-day mobile service available.' },
-  { n: '03', popular: true, title: 'Lease Return Wheel Repair', desc: 'Avoid expensive dealership charges. Restore your wheels before returning your leased or rental vehicle and save with our professional mobile service.' },
-  { n: '04', title: 'Polish', desc: 'Brilliant polished finish that turns heads wherever you go.' },
-  { n: '05', title: 'Wheel Color Change', desc: 'Give your wheels a completely new look with a professional color change. Choose from gloss, satin, or matte finishes—all without powder coating.' },
-  { n: '06', title: 'Mobile Service', desc: 'We come to you. Fully equipped mobile workshop brings professional repair right to your doorstep.' },
-];
-
-export const GALLERY = [
-  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/pm142zyh_hf_20260424_204650_7c55fbd4-7b88-4a51-a256-5204ed986ba6.png',
-  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/9e8vzlj0_hf_20260424_204304_bf194c8a-63eb-4c2e-b916-ea8c51c927f2.png',
-  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/853z266j_hf_20260424_203317_9c302291-afdb-446e-a79e-39bf3fa1f907.png',
-  'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/3zxk9c3a_hf_20260424_203121_a130f5c3-d2a3-4de2-95df-a7b73c8e9731.png',
-];
-
-export const HERO_WHEEL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/ht806ru0_download.jpg';
-
-export const PRICING = [
-  { title: 'Curb Rash Repair', price: '$100', unit: '/wheel', features: ['Surface scratch removal','Edge restoration','OEM color match','Clear coat finish','Same-day available'] },
-  { title: 'Premium Wheel Polish', price: 'Get Quote', unit: '/wheel', features: ['Deep Clean & Polish','Gloss Enhancement','Light Surface Imperfection Removal','Protective Coating','Safety certified'] },
-  { title: 'Custom Refinishing', price: 'Get Quote', unit: '/wheel', popular: true, features: ['Any Color of Your Choice','Gloss, Satin & Matte Finishes','Complete Wheel Refinish','OEM & Custom Color Matching','Durable Automotive Paint Finish'] },
-  { title: 'Complete Wheel Restoration Package', price: 'Get Quote', unit: '/wheel', features: ['Complete damage repair','Full Wheel Refinishing','Any Color & Finish','Premium Clear Coat','Same-Day Mobile Service'] },
+  {
+    n: '01',
+    title: 'Curb Rash Repair',
+    desc: 'Precision grinding and refinishing eliminates curb damage, restoring your rims to a clean factory-style finish.',
+  },
+  {
+    n: '02',
+    title: 'More Wheels, More Savings',
+    desc: 'Get a special discount when you book 3 or more curb rash repairs. Same-day mobile service available.',
+  },
+  {
+    n: '03',
+    popular: true,
+    title: 'Lease Return Wheel Repair',
+    desc: 'Avoid expensive dealership charges. Restore your wheels before returning your leased or rental vehicle with our professional mobile service.',
+  },
+  {
+    n: '04',
+    title: 'Polish',
+    desc: 'Restore shine and give your wheels a brilliant polished finish that stands out.',
+  },
+  {
+    n: '05',
+    title: 'Wheel Color Change',
+    desc: 'Give your wheels a completely new look. Choose from gloss, satin, or matte finishes — without powder coating.',
+  },
+  {
+    n: '06',
+    title: 'Mobile Service',
+    desc: 'We come to you. Our mobile setup brings professional wheel repair directly to your home, office, or location.',
+  },
 ];
 
 export const PROCESS = [
-  { n: '01', title: 'Call Us', desc: 'Call or text (747) 717-0060. Describe your wheel damage for an initial estimate.' },
-  { n: '02', title: 'Free Assessment', desc: 'We inspect your wheels and provide a detailed, no-obligation quote.' },
-  { n: '03', title: 'Expert Repair', desc: 'Our technicians restore your wheels using industry-leading equipment.' },
-  { n: '04', title: 'Perfect Results', desc: 'Quality inspection ensures flawless results. Wheels returned looking brand new.' },
-];
-
-export const TESTIMONIALS = [
-  { quote: 'Had a nasty curb scrape on my 4 Series — the team at Rim Repair Pro showed up, color-matched the diamond silver flawlessly and were gone in under two hours. You cannot even tell where the damage was.', name: 'Andre Kowalski', car: 'BMW 4 Series' },
-  { quote: 'Booked them for my Model Y after clipping a pothole. They refinished all four matte wheels right in my driveway the same day. Factory look, zero hassle.', name: 'Nadia Chen', car: 'Tesla Model Y' },
-  { quote: 'Best wheel work I have had in fifteen years of owning exotics. Powder coated my 992 wheels satin graphite and the finish is deeper than OEM. Worth every dollar.', name: 'Tomas Delgado', car: 'Porsche 911' },
-  { quote: 'These guys saved me $4,200. My M340i wheel was bent and gouged — the replacement quote was insane. They straightened and refinished it for a fraction and it is perfect.', name: 'Kristen Holloway', car: 'BMW M340i' },
-];
-
-export const FAQS = [
-  { q: 'How long does a typical rim repair take?', a: 'Most curb-rash repairs are completed in 60–120 minutes per wheel. Full refinishes, powder coating or straightening jobs typically take 2–4 hours. We work on-site so you save a trip to the shop.' },
-  { q: 'Do you offer mobile rim repair?', a: 'Yes. Our fully equipped mobile workshop services homes, offices and dealerships across Greater Los Angeles.' },
-  { q: 'What types of wheels can you repair?', a: 'We work on alloy, forged, diamond-cut, chrome, polished, multi-piece and OEM wheels for nearly every make — from daily drivers to exotics.' },
-  { q: 'Is wheel repair safe and structurally sound?', a: 'Absolutely. All structural repairs are load-tested and safety-certified to factory-safe standards.' },
-  { q: 'How much can I save vs. buying new wheels?', a: 'Clients typically save 60–80% compared to replacing OEM or forged wheels.' },
-  { q: 'Do you offer a warranty?', a: 'Yes — every repair is backed by our written warranty on workmanship.' },
+  {
+    n: '01',
+    title: 'Send Us a Photo',
+    desc: 'Text us a clear photo of the damaged wheel and your address.',
+  },
+  {
+    n: '02',
+    title: 'Get Your Quote',
+    desc: 'We review the damage and text you back with your quote.',
+  },
+  {
+    n: '03',
+    title: 'Choose Your Time',
+    desc: 'Pick an available appointment that works for you.',
+  },
+  {
+    n: '04',
+    title: 'We Come To You',
+    desc: 'Our mobile service arrives at your location and completes the work on-site.',
+  },
 ];
 
 export const SERVICE_AREAS = [
-  'Los Angeles','Van Nuys','Burbank','Glendale','Pasadena','Sherman Oaks','Encino','Woodland Hills','Calabasas','Santa Monica','Beverly Hills','West Hollywood','Hollywood','Studio City','North Hollywood'
+  'Los Angeles',
+  'Burbank',
+  'Glendale',
+  'Pasadena',
+  'Van Nuys',
+  'Sherman Oaks',
+  'Encino',
+  'Studio City',
+  'North Hollywood',
+  'Woodland Hills',
+  'Calabasas',
+  'Beverly Hills',
+  'West Hollywood',
+  'Hollywood',
+  'Santa Monica',
+];
+
+export const QUOTE_SERVICES = [
+  'Curb Rash Repair',
+  'Polish',
+  'Wheel Color Change',
+  'Lease Return Wheel Repair',
+  'Not Sure',
 ];
