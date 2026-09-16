@@ -3,7 +3,7 @@ import { MapPin, Navigation, Truck, Phone, ArrowUpRight } from 'lucide-react';
 import { SERVICE_AREAS, BRAND } from '../data/mock';
 
 const ServiceAreas = () => (
-  <section className="relative overflow-hidden bg-[#f7f6f2] py-14 text-[#111315] md:py-20">
+  <section id="areas" className="relative scroll-mt-[82px] overflow-hidden bg-[#f7f6f2] py-14 text-[#111315] md:py-20">
     <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-[#e8b94e]/10 blur-3xl" />
     <div className="relative mx-auto grid max-w-[1380px] items-stretch gap-5 px-5 md:gap-6 md:px-8 lg:grid-cols-12">
       <div className="relative overflow-hidden rounded-[20px] bg-[#0b0c0d] p-6 text-white sm:p-7 md:rounded-[24px] md:p-10 lg:col-span-5">
