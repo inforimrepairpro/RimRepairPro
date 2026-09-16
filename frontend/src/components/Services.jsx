@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
-import { SERVICES, GALLERY } from '../data/mock';
+import { SERVICES, SERVICE_IMAGES } from '../data/mock';
 
 const Services = () => (
   <section id="services" className="bg-[#f7f6f2] py-14 text-[#111315] md:py-20">
@@ -13,7 +13,7 @@ const Services = () => (
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((s, i) => {
-          const image = GALLERY[i % GALLERY.length];
+          const image = SERVICE_IMAGES[i];
           return <a href="#contact" key={i} className="group overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-[0_14px_35px_-28px_rgba(0,0,0,.4)] transition-all hover:-translate-y-1 hover:shadow-xl">
             <div className="relative h-[180px] overflow-hidden bg-zinc-200 sm:h-[190px]"><img src={image} alt={s.title} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.035]"/>{s.popular && <span className="absolute right-3 top-3 rounded-md bg-[#e8b94e] px-3 py-1.5 text-[9px] font-black uppercase tracking-[.15em] text-[#111315]">Popular</span>}</div>
             <div className="relative flex min-h-[180px] flex-col p-5 md:min-h-[190px] md:p-6"><h3 className="text-[20px] font-extrabold tracking-tight">{s.title}</h3><p className="mt-2 text-[13px] leading-6 text-zinc-600">{s.desc}</p><div className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[10px] font-black uppercase tracking-[.14em] text-[#9b711b]">Get Quote <ArrowUpRight className="h-3.5 w-3.5"/></div></div>
