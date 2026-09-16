@@ -1,5 +1,5 @@
-export const LOGO_URL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/tra44lg4_hf_20260424_224219_35c61e49-59b5-4941-b4f7-ff5cf708e64c-removebg-preview.png';
-export const HERO_WHEEL = 'https://customer-assets.emergentagent.com/job_pro-rim-solutions/artifacts/ht806ru0_download.jpg';
+export const LOGO_URL = '/RRP%20logo.JPG';
+export const HERO_WHEEL = '/Background%20phon.JPG';
 
 export const BRAND = {
   name: 'Rim Repair Pro',
@@ -52,6 +52,15 @@ export const SERVICES = [
   { n: '04', title: 'Polish', desc: 'Restore shine and give your wheels a brilliant polished finish that stands out.' },
   { n: '05', title: 'Wheel Color Change', desc: 'Give your wheels a completely new look. Choose from gloss, satin, or matte finishes — without powder coating.' },
   { n: '06', title: 'Mobile Service', desc: 'We come to you. Our mobile setup brings professional wheel repair directly to your home, office, or location.' },
+];
+
+export const SERVICE_IMAGES = [
+  '/SERV.JPG',
+  '/services.JPG',
+  '/SERV.JPG',
+  '/services.JPG',
+  '/SERV.JPG',
+  '/services.JPG',
 ];
 
 export const GALLERY = [
