@@ -1,262 +1,63 @@
-import React, { useEffect, useRef } from 'react';
-import {
-  Phone,
-  ArrowRight,
-  Truck,
-  Zap,
-  Award,
-  ShieldCheck,
-} from 'lucide-react';
-import { BRAND, HERO_WHEEL, HERO_STATS_INLINE } from '../data/mock';
-
-const ICONS = { Truck, Zap, Award, ShieldCheck };
+import React from 'react';
+import { Phone, CalendarDays, MessageSquareText, MapPin, Clock3, Sparkles } from 'lucide-react';
+import { BRAND, HERO_WHEEL } from '../data/mock';
 
 const trackPhoneConversion = () => {
-  if (
-    typeof window !== 'undefined' &&
-    typeof window.gtag === 'function'
-  ) {
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-18180382680/bNoPCIrCz9YcENi_it1D',
-    });
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', 'conversion', { send_to: 'AW-18180382680/bNoPCIrCz9YcENi_it1D' });
   }
 };
 
-// Sparkle dot positions around the wheel (% relative to container)
-const SPARKLES = [
-  { top: '8%', left: '18%', delay: '0s' },
-  { top: '14%', right: '12%', delay: '0.6s' },
-  { top: '38%', left: '4%', delay: '1.2s' },
-  { top: '52%', right: '6%', delay: '0.3s' },
-  { bottom: '14%', left: '14%', delay: '1.8s' },
-  { bottom: '8%', right: '20%', delay: '0.9s' },
-  { top: '24%', left: '46%', delay: '2.1s' },
-  { bottom: '22%', right: '40%', delay: '1.5s' },
-];
+const Hero = () => (
+  <section id="top" className="relative min-h-[780px] pt-32 pb-16 overflow-hidden bg-[#07111f]">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_25%,rgba(27,111,255,0.25),transparent_34%),radial-gradient(circle_at_15%_80%,rgba(20,184,166,0.12),transparent_30%)]" />
+    <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-const Hero = () => {
-  const tiltRef = useRef(null);
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const mq =
-      typeof window !== 'undefined' && window.matchMedia
-        ? window.matchMedia('(pointer: fine)')
-        : { matches: true };
-
-    if (!mq.matches) return undefined;
-
-    let raf = 0;
-    let tx = 0;
-    let ty = 0;
-    let cx = 0;
-    let cy = 0;
-
-    const onMove = (e) => {
-      if (!containerRef.current) return;
-
-      const r = containerRef.current.getBoundingClientRect();
-      const dx =
-        (e.clientX - (r.left + r.width / 2)) /
-        Math.max(r.width, 1);
-      const dy =
-        (e.clientY - (r.top + r.height / 2)) /
-        Math.max(r.height, 1);
-
-      tx = -Math.max(-1, Math.min(1, dy)) * 14;
-      ty = Math.max(-1, Math.min(1, dx)) * 18;
-    };
-
-    const tick = () => {
-      cx += (tx - cx) * 0.08;
-      cy += (ty - cy) * 0.08;
-
-      if (tiltRef.current) {
-        tiltRef.current.style.transform =
-          `perspective(1000px) rotateX(${cx.toFixed(2)}deg) rotateY(${cy.toFixed(2)}deg)`;
-      }
-
-      raf = requestAnimationFrame(tick);
-    };
-
-    window.addEventListener('mousemove', onMove, {
-      passive: true,
-    });
-
-    raf = requestAnimationFrame(tick);
-
-    return () => {
-      window.removeEventListener('mousemove', onMove);
-      cancelAnimationFrame(raf);
-    };
-  }, []);
-
-  return (
-    <section
-      id="top"
-      className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden"
-    >
-      {/* Gold spotlight on right */}
-      <div className="absolute right-[-15%] top-[5%] w-[900px] h-[900px] spotlight pointer-events-none" />
-
-      <div className="absolute left-[-20%] bottom-[-10%] w-[700px] h-[700px] spotlight opacity-40 pointer-events-none" />
-
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        <div className="lg:col-span-6 fade-up">
-          <div className="inline-flex items-center gap-2 rounded-[10px] border border-[#2a2622] bg-[#14120e]/60 backdrop-blur px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#C5C8CC]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C5C8CC] animate-pulse" />
-            Mobile Service · We Come To You
-          </div>
-
-          <h1 className="mt-7 font-display text-[56px] leading-[0.95] sm:text-[72px] md:text-[88px] lg:text-[100px] font-bold text-[#F5F3EE]">
-            Rim
-            <span className="block -mt-1">
-              Repair Pro
-            </span>
-
-            <span className="block mt-2 text-[40px] sm:text-[52px] md:text-[60px] lg:text-[68px] font-semibold">
-              <span className="gold-text">
-                Mobile
-              </span>{' '}
-
-              <span className="text-[#F5F3EE]/80">
-                Service
-              </span>
-            </span>
-          </h1>
-
-          <p className="mt-4 text-[18px] md:text-[20px] text-[#C5C8CC]/85 font-medium">
-            We Come To You
-          </p>
-
-          <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-[#8B8982]">
-            Premium mobile wheel restoration. Curb rash,
-            scuffed rims, custom refinishing — right at your
-            doorstep. Same-day service available.
-          </p>
-
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href={`tel:${BRAND.phoneTel}`}
-              onClick={trackPhoneConversion}
-              className="gold-btn inline-flex items-center gap-2 rounded-[12px] px-7 py-4 text-[12px] font-semibold tracking-[0.2em] uppercase transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              Call Now
-            </a>
-
-            <a
-              href="#services"
-              className="inline-flex items-center gap-2 rounded-[12px] border border-[#2a2622] bg-[#14120e]/40 px-7 py-4 text-[12px] font-semibold tracking-[0.2em] uppercase text-[#F5F3EE] hover:border-[#C5C8CC] hover:text-[#C5C8CC] transition-colors"
-            >
-              Our Services
-              <ArrowRight className="w-4 h-4" />
-            </a>
-
-            <a
-              href={`tel:${BRAND.phoneTel}`}
-              onClick={trackPhoneConversion}
-              className="hidden sm:inline-block text-[17px] text-[#C5C8CC] hover:text-[#E8EAED] font-semibold transition-colors"
-            >
-              {BRAND.phone}
-            </a>
-          </div>
-
-          {/* Inline badges */}
-          <div className="mt-10 flex flex-wrap gap-3">
-            {HERO_STATS_INLINE.map((s, i) => {
-              const Icon = ICONS[s.icon];
-
-              return (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 rounded-[10px] border border-[#2a2622] bg-[#14120e]/40 backdrop-blur px-4 py-3 min-w-[160px]"
-                >
-                  <div className="w-9 h-9 rounded-full border border-[#C5C8CC]/30 bg-[#1A1C1F] flex items-center justify-center">
-                    <Icon className="w-4 h-4 text-[#C5C8CC]" />
-                  </div>
-
-                  <div className="leading-tight">
-                    <div className="text-[13px] font-semibold text-[#F5F3EE]">
-                      {s.label}
-                    </div>
-
-                    <div className="text-[10px] uppercase tracking-[0.16em] text-[#8B8982]">
-                      {s.sub}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+    <div className="relative max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div className="lg:col-span-7">
+        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-cyan-100">
+          <MapPin className="w-3.5 h-3.5" /> Greater Los Angeles · Mobile Service
         </div>
 
-        {/* Right side — wheel photo */}
-        <div
-          ref={containerRef}
-          className="lg:col-span-6 relative fade-up flex items-center justify-center"
-          style={{
-            animationDelay: '0.15s',
-            perspective: '1000px',
-          }}
-        >
-          <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] lg:w-[560px] lg:h-[560px]">
-            {/* Ambient silver glow behind */}
-            <div
-              className="absolute inset-0 rounded-full blur-3xl pointer-events-none"
-              style={{
-                background:
-                  'radial-gradient(circle, rgba(197,200,204,0.32) 0%, rgba(197,200,204,0) 60%)',
-              }}
-            />
+        <h1 className="mt-7 max-w-4xl font-display text-[54px] sm:text-[70px] md:text-[86px] leading-[0.92] font-bold tracking-[-0.04em] text-white">
+          Damaged Rim?
+          <span className="block text-[#64d8ff]">We Come To You.</span>
+        </h1>
 
-            {/* Floor shadow */}
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[60%] h-5 rounded-[50%] bg-black/70 blur-2xl pointer-events-none" />
+        <p className="mt-7 max-w-2xl text-[17px] md:text-[20px] leading-relaxed text-slate-300">
+          Mobile curb rash repair, wheel polish, color changes and lease-return wheel repair — completed at your home, office or convenient location.
+        </p>
 
-            {/* Sparkle dots */}
-            {SPARKLES.map((s, i) => (
-              <span
-                key={i}
-                className="sparkle-dot"
-                style={{
-                  top: s.top,
-                  left: s.left,
-                  right: s.right,
-                  bottom: s.bottom,
-                  animationDelay: s.delay,
-                }}
-              />
-            ))}
+        <div className="mt-9 flex flex-wrap gap-3">
+          <a href={`tel:${BRAND.phoneTel}`} onClick={trackPhoneConversion} className="inline-flex items-center gap-2 rounded-xl bg-[#2f7cff] px-6 py-4 text-sm font-bold text-white shadow-[0_14px_40px_rgba(47,124,255,.35)] hover:bg-[#438aff] transition-colors">
+            <Phone className="w-4 h-4" /> Call Now — {BRAND.phone}
+          </a>
+          <a href="#contact" className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-4 text-sm font-bold text-[#07111f] hover:bg-slate-100 transition-colors">
+            <CalendarDays className="w-4 h-4" /> Book Online
+          </a>
+          <a href={`sms:${BRAND.phoneTel}`} className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-4 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+            <MessageSquareText className="w-4 h-4" /> Text Photo — Get Quote
+          </a>
+        </div>
 
-            {/* 3D tilt wrapper */}
-            <div
-              ref={tiltRef}
-              className="absolute inset-0 flex items-center justify-center will-change-transform"
-              style={{
-                transition: 'transform 60ms linear',
-                transformStyle: 'preserve-3d',
-              }}
-            >
-              <img
-                src={HERO_WHEEL}
-                alt="Premium forged alloy wheel"
-                draggable="false"
-                className="w-full h-full object-contain select-none pointer-events-none animate-wheel-spin"
-                style={{
-                  WebkitMaskImage:
-                    'radial-gradient(circle at center, black 46%, transparent 50%)',
-                  maskImage:
-                    'radial-gradient(circle at center, black 46%, transparent 50%)',
-                  filter:
-                    'sepia(0.25) saturate(1.3) brightness(0.75) hue-rotate(-15deg) drop-shadow(0 24px 40px rgba(0,0,0,0.7))',
-                }}
-              />
-            </div>
+        <div className="mt-10 grid sm:grid-cols-3 gap-3 max-w-3xl">
+          <div className="rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur"><Sparkles className="w-5 h-5 text-[#64d8ff]"/><div className="mt-3 font-semibold text-white">Photo Quote</div><div className="mt-1 text-xs text-slate-400">Send damage + address</div></div>
+          <div className="rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur"><Clock3 className="w-5 h-5 text-[#64d8ff]"/><div className="mt-3 font-semibold text-white">Same-Day</div><div className="mt-1 text-xs text-slate-400">Ask about availability</div></div>
+          <div className="rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur"><MapPin className="w-5 h-5 text-[#64d8ff]"/><div className="mt-3 font-semibold text-white">Mobile Service</div><div className="mt-1 text-xs text-slate-400">We come to your location</div></div>
+        </div>
+      </div>
+
+      <div className="lg:col-span-5 relative flex justify-center">
+        <div className="absolute inset-0 m-auto w-[420px] h-[420px] rounded-full bg-[#2f7cff]/20 blur-3xl" />
+        <div className="relative w-[320px] h-[320px] sm:w-[430px] sm:h-[430px] rounded-full border border-white/10 bg-white/[.03] p-5 shadow-2xl">
+          <img src={HERO_WHEEL} alt="Alloy wheel" className="w-full h-full rounded-full object-cover" />
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-[#0b1728]/95 px-5 py-3 text-xs font-semibold text-white shadow-xl">
+            Call or text {BRAND.phone}
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Hero;
