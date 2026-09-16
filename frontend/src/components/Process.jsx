@@ -5,7 +5,7 @@ import { PROCESS } from '../data/mock';
 const icons = [Camera, MessageSquareText, CalendarCheck, Truck];
 
 const Process = () => (
-  <section className="relative overflow-hidden bg-[#f7f6f2] py-14 text-[#111315] md:py-20">
+  <section id="process" className="relative scroll-mt-[82px] overflow-hidden bg-[#f7f6f2] py-14 text-[#111315] md:py-20">
     <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#e8b94e]/10 blur-3xl" />
     <div className="relative mx-auto max-w-[1380px] px-5 md:px-8">
       <div className="mb-8 grid items-end gap-5 border-b border-zinc-200 pb-7 md:mb-10 md:gap-6 md:pb-8 lg:grid-cols-12">
