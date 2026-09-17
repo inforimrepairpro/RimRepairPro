@@ -57,11 +57,11 @@ export const SERVICES = [
 
 export const SERVICE_IMAGES = [
   '/SERV.JPG',
-  '/services.JPG',
-  '/Rim-11.JPG',
-  '/Rim-18.JPG',
-  '/Rim-12.JPG',
-  '/Rim-13.JPG',
+  '/more%20wheels.JPG',
+  '/lease%20return.JPG',
+  '/polish.JPG',
+  '/color%20change.JPG',
+  '/Mobile%20service.JPG',
 ];
 
 export const GALLERY = [
