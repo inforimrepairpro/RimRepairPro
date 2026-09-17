@@ -10,9 +10,10 @@ import ServiceAreas from '../components/ServiceAreas';
 import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
+import MobileActionBar from '../components/MobileActionBar';
 
 const Home = () => (
-  <div className="min-h-screen bg-[#08090a]">
+  <div className="min-h-screen bg-[#08090a] pb-[68px] md:pb-0">
     <Navbar />
     <Hero />
     <Features />
@@ -24,6 +25,7 @@ const Home = () => (
     <ServiceAreas />
     <FAQ />
     <Footer />
+    <MobileActionBar />
   </div>
 );
 
