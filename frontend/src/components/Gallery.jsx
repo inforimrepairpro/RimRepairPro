@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeftRight, Camera } from 'lucide-react';
 
 const PAIRS = [
-  { before: '/Rim-30.JPG', after: '/Rim-25.JPG' },
+  { before: '/Rim-26.JPG', after: '/Rim-19.JPG' },
   { before: '/Rim-43.JPG', after: '/Rim-34.JPG' },
   { before: '/Rim-37.JPG', after: '/Rim-40.JPG' },
   { before: '/Rim-20.JPG', after: '/Rim-15.JPG' },
