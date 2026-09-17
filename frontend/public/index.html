@@ -22,8 +22,39 @@
 
     <!-- Google Ads website call conversion -->
     <script>
+        function updateGoogleForwardingNumber(formattedNumber, plainNumber) {
+            var businessDigits = '7477170060';
+            var forwardingDigits = String(plainNumber || formattedNumber || '').replace(/\D/g, '');
+
+            if (!forwardingDigits) return;
+
+            function updatePhoneNumbers() {
+                document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+                    var hrefDigits = (link.getAttribute('href') || '').replace(/\D/g, '');
+                    if (hrefDigits === businessDigits) {
+                        link.setAttribute('href', 'tel:' + forwardingDigits);
+                    }
+                });
+
+                var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+                var node;
+                while ((node = walker.nextNode())) {
+                    if (node.nodeValue && node.nodeValue.indexOf('(747) 717-0060') !== -1) {
+                        node.nodeValue = node.nodeValue.replace(/\(747\) 717-0060/g, formattedNumber);
+                    }
+                }
+            }
+
+            if (document.body) updatePhoneNumbers();
+
+            var observer = new MutationObserver(updatePhoneNumbers);
+            observer.observe(document.documentElement, { childList: true, subtree: true });
+            window.setTimeout(function () { observer.disconnect(); }, 10000);
+        }
+
         gtag('config', 'AW-18180382680/xqHYCILd8-wcENi_it1D', {
-            'phone_conversion_number': '747-717-0060'
+            'phone_conversion_number': '747-717-0060',
+            'phone_conversion_callback': updateGoogleForwardingNumber
         });
     </script>
 
