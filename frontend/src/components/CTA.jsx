@@ -11,7 +11,7 @@ const CTA = () => {
   const smsHref = useMemo(() => {
     const intro = tab === 'quote' ? 'Hi Rim Repair Pro, I would like a wheel repair quote.' : 'Hi Rim Repair Pro, I would like to request an appointment.';
     const body = [intro, `Name: ${form.name}`, `Phone: ${form.phone}`, `Service address: ${form.address}`, `Service: ${form.service}`, `Number of rims: ${form.rims}`, 'I will attach photos of the wheel damage to this message.'].join('\n');
-    return `sms:${BRAND.phoneTel}?&body=${encodeURIComponent(body)}`;
+    return `sms:${BRAND.phoneTel}?body=${encodeURIComponent(body)}`;
   }, [tab, form]);
 
   const openText = (e) => {
