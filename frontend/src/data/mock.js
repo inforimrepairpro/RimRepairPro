@@ -60,19 +60,14 @@ export const SERVICE_IMAGES = [
   '/services.JPG',
   '/Rim-11.JPG',
   '/Rim-18.JPG',
-  '/Rim-24.JPG',
-  '/Rim-31.JPG',
+  '/Rim-12.JPG',
+  '/Rim-13.JPG',
 ];
 
 export const GALLERY = [
   '/Rim-11.JPG', '/Rim-12.JPG', '/Rim-13.JPG', '/Rim-14.JPG',
   '/Rim-15.JPG', '/Rim-16.JPG', '/Rim-17.JPG', '/Rim-18.JPG',
   '/Rim-19.JPG', '/Rim-20.JPG', '/Rim-21.JPG', '/Rim-22.JPG',
-  '/Rim-23.JPG', '/Rim-24.JPG', '/Rim-25.JPG', '/Rim-26.JPG',
-  '/Rim-27.JPG', '/Rim-28.JPG', '/Rim-29.JPG', '/Rim-30.JPG',
-  '/Rim-31.JPG', '/Rim-32.JPG', '/Rim-33.JPG', '/Rim-34.JPG',
-  '/Rim-35.JPG', '/Rim-36.JPG', '/Rim-37.JPG', '/Rim-38.JPG',
-  '/Rim-39.JPG', '/Rim-40.JPG', '/Rim-41.JPG', '/Rim-42.JPG', '/Rim-43.JPG',
 ];
 
 export const PRICING = [
@@ -110,9 +105,5 @@ export const SERVICE_AREAS = [
 ];
 
 export const QUOTE_SERVICES = [
-  'Curb Rash Repair',
-  'Polish',
-  'Wheel Color Change',
-  'Lease Return Wheel Repair',
-  'Not Sure',
+  'Curb Rash Repair', 'Polish', 'Wheel Color Change', 'Lease Return Wheel Repair', 'Not Sure'
 ];
