@@ -6,6 +6,8 @@ const PAIRS = [
   { before: '/Rim-43.JPG', after: '/Rim-34.JPG' },
   { before: '/Rim-37.JPG', after: '/Rim-40.JPG' },
   { before: '/Rim-20.JPG', after: '/Rim-15.JPG' },
+  { before: '/Audi-1.JPG', after: '/Audi-2.JPG' },
+  { before: '/corvette.jpg', after: '/Rim-30.JPG' },
 ];
 
 const CompareCard = ({ before, after, index }) => {
