@@ -51,8 +51,8 @@ export default function AIWheelQuote() {
     <section id="ai-quote" className="bg-[#08090a] px-4 py-16 md:py-24">
       <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 md:p-10">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white/70">AI Wheel Damage Check</div>
-          <h2 className="text-3xl font-black text-white md:text-5xl">Upload a wheel photo. Get a fast AI estimate.</h2>
+          <div className="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white/70"><span className="mr-2 rounded bg-[#e8b94e] px-2 py-1 text-black">NEW</span>AI Wheel Damage Check</div>
+          <h1 className="text-3xl font-black text-white md:text-5xl">Upload a wheel photo. Get a fast AI estimate.</h1>
           <p className="mx-auto mt-4 max-w-2xl text-base text-white/60 md:text-lg">AI checks visible cosmetic curb rash and scratches. Final price is always confirmed by Rim Repair Pro.</p>
         </div>
 

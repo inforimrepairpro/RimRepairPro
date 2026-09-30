@@ -14,6 +14,7 @@ export const BRAND = {
 export const GOOGLE_PROFILE_URL = 'https://share.google/PhJBocTOSLuX8EsDI';
 
 export const NAV_LINKS = [
+  { label: 'AI Quote', href: '/ai-quote', isNew: true },
   { label: 'Services', href: '#services' },
   { label: 'Our Work', href: '#gallery' },
   { label: 'How It Works', href: '#process' },

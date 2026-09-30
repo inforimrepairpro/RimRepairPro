@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Services from '../components/Services';
-import AIWheelQuote from '../components/AIWheelQuote';
 import Gallery from '../components/Gallery';
 import Process from '../components/Process';
 import Reviews from '../components/Reviews';
@@ -19,7 +18,6 @@ const Home = () => (
     <Hero />
     <Features />
     <Services />
-    <AIWheelQuote />
     <Gallery />
     <Process />
     <Reviews />
