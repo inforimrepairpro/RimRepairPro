@@ -4,5 +4,10 @@
       "source": "/ai-quote",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/analyze-wheel.js": {
+      "maxDuration": 60
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 
 const PHONE = '17477170060';
-const API_BASE = process.env.REACT_APP_BACKEND_URL || '';
+const API_BASE = '';
 
 export default function AIWheelQuote() {
   const [file, setFile] = useState(null);
@@ -20,6 +20,11 @@ export default function AIWheelQuote() {
   const chooseFile = (event) => {
     const next = event.target.files?.[0];
     if (!next) return;
+    if (!['image/jpeg', 'image/png', 'image/webp'].includes(next.type) || next.size > 3 * 1024 * 1024) {
+      setError('Please choose a JPG, PNG or WebP image smaller than 3 MB.');
+      setStage('error');
+      return;
+    }
     setFile(next);
     setPreview(URL.createObjectURL(next));
     setResult(null);
@@ -31,10 +36,16 @@ export default function AIWheelQuote() {
     if (!file) return;
     setStage('analyzing');
     setError('');
-    const body = new FormData();
-    body.append('file', file);
+
     try {
-      const response = await fetch(`${API_BASE}/api/analyze-wheel`, { method: 'POST', body });
+      const image = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(new Error('Could not read this photo. Please choose another image.'));
+        reader.readAsDataURL(file);
+      });
+      const response = await fetch(`${API_BASE}/api/analyze-wheel`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ image }) });
+      if (!response.headers.get('content-type')?.includes('application/json')) throw new Error('AI is temporarily unavailable. Please text your photo for a quote.');
       const data = await response.json();
       if (!response.ok) throw new Error(data.detail || 'AI analysis failed');
       setResult(data);
