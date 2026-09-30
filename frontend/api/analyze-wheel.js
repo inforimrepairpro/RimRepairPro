@@ -25,7 +25,8 @@ module.exports = async function handler(req, res) {
     });
     const data = await response.json();
     if (!response.ok) {
-      console.error('Wheel AI upstream status',response.status,data.error?.code);
+      const safeMessage = String(data.error?.message || '').replace(/data:image\/[^\s"']+/g, '[image]').replace(/sk-[A-Za-z0-9_-]+/g, '[key]').slice(0, 500);
+      console.error('Wheel AI upstream status',response.status,data.error?.code,data.error?.param,safeMessage);
       const detail = data.error?.code === 'insufficient_quota'
         ? 'AI is temporarily unavailable. Please text your wheel photo for a quote.'
         : 'AI could not analyze this photo. Please try again or text it for a manual quote.';
