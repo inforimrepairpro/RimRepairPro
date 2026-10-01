@@ -2,6 +2,8 @@ import React from 'react';
 import { Star, ExternalLink, Quote } from 'lucide-react';
 import { TESTIMONIALS, GOOGLE_PROFILE_URL } from '../data/mock';
 
+const YELP_PROFILE_URL = 'https://yelp.to/vLDHMF6qgq';
+
 const GoogleLogo = ({ className = 'h-8 w-8' }) => (
   <svg viewBox="0 0 24 24" className={className} aria-label="Google" role="img">
     <path fill="#4285F4" d="M21.6 12.23c0-.71-.06-1.4-.18-2.07H12v3.92h5.38a4.6 4.6 0 0 1-2 3.02v2.54h3.24c1.9-1.75 2.98-4.33 2.98-7.41Z" />
@@ -11,21 +13,37 @@ const GoogleLogo = ({ className = 'h-8 w-8' }) => (
   </svg>
 );
 
+const YelpLogo = ({ className = 'h-8 w-8' }) => (
+  <div className={`${className} flex items-center justify-center rounded-md bg-[#d32323] text-[13px] font-black text-white`} aria-label="Yelp" role="img">Y</div>
+);
+
+const Rating = ({ logo, label, href }) => (
+  <div>
+    <div className="flex items-center gap-3">
+      {logo}
+      <div className="text-[34px] font-black text-white">5.0</div>
+      <div>
+        <div className="flex gap-0.5" aria-label="5 out of 5 stars">{[0,1,2,3,4].map((i) => <Star key={i} className="h-4 w-4 fill-[#e8b94e] text-[#e8b94e]" />)}</div>
+        <div className="mt-1 text-xs text-zinc-400">5-star rated on {label}</div>
+      </div>
+    </div>
+    <a href={href} target="_blank" rel="noreferrer" className="mt-3 inline-flex min-h-10 items-center gap-2 text-sm font-black text-[#e8b94e]">View on {label} <ExternalLink className="h-4 w-4" /></a>
+  </div>
+);
+
 const Reviews = () => (
   <section id="reviews" className="scroll-mt-[82px] bg-[#0b0d0f] py-14 text-white md:py-20">
     <div className="mx-auto max-w-[1380px] px-5 md:px-8">
       <div className="grid items-end gap-6 border-b border-white/10 pb-8 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <span className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[.24em] text-[#e8b94e]"><GoogleLogo className="h-5 w-5" /> Google Reviews</span>
+        <div className="lg:col-span-6">
+          <span className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[.24em] text-[#e8b94e]"><GoogleLogo className="h-5 w-5" /> Customer Reviews</span>
           <h2 className="mt-3 font-display text-[40px] font-bold leading-[.95] sm:text-[48px] md:text-[64px]">What customers<br/><span className="text-[#e8b94e]">say about our work.</span></h2>
         </div>
-        <div className="lg:col-span-5 lg:justify-self-end">
-          <div className="flex items-center gap-3">
-            <GoogleLogo className="h-10 w-10 shrink-0" />
-            <div className="text-[34px] font-black text-white">5.0</div>
-            <div><div className="flex gap-0.5" aria-label="5 out of 5 stars">{[0,1,2,3,4].map((i) => <Star key={i} className="h-4 w-4 fill-[#e8b94e] text-[#e8b94e]" />)}</div><div className="mt-1 text-xs text-zinc-400">6 reviews on Google</div></div>
+        <div className="lg:col-span-6 lg:justify-self-end">
+          <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
+            <Rating logo={<GoogleLogo className="h-10 w-10 shrink-0" />} label="Google" href={GOOGLE_PROFILE_URL} />
+            <Rating logo={<YelpLogo className="h-10 w-10 shrink-0" />} label="Yelp" href={YELP_PROFILE_URL} />
           </div>
-          <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noreferrer" className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-black text-[#e8b94e]">View on Google <ExternalLink className="h-4 w-4" /></a>
         </div>
       </div>
 
@@ -44,8 +62,11 @@ const Reviews = () => (
       </div>
 
       <div className="mt-7 flex flex-col gap-4 rounded-xl border border-[#e8b94e]/20 bg-[#e8b94e]/10 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <div><div className="font-extrabold">Read our customer feedback on Google</div><div className="mt-1 text-xs leading-5 text-zinc-400">Customer feedback shown here is reproduced from the Rim Repair Pro Google profile.</div></div>
-        <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noreferrer" className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-[#e8b94e] px-5 py-3 text-sm font-black text-[#111315]">Open Google Reviews <ExternalLink className="h-4 w-4" /></a>
+        <div><div className="font-extrabold">See our 5-star customer ratings</div><div className="mt-1 text-xs leading-5 text-zinc-400">Find Rim Repair Pro customer feedback on Google and Yelp.</div></div>
+        <div className="flex flex-wrap gap-3">
+          <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noreferrer" className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-[#e8b94e] px-5 py-3 text-sm font-black text-[#111315]">Google Reviews <ExternalLink className="h-4 w-4" /></a>
+          <a href={YELP_PROFILE_URL} target="_blank" rel="noreferrer" className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-black text-[#d32323]">Yelp Reviews <ExternalLink className="h-4 w-4" /></a>
+        </div>
       </div>
     </div>
   </section>
