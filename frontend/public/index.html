@@ -58,6 +58,34 @@
         });
     </script>
 
+
+    <!-- Observe SMS intent; opening Messages does not confirm a sent message. -->
+    <script>
+        (function () {
+            var lastSmsOpen = 0;
+            window.trackSmsOpen = function (source) {
+                var now = Date.now();
+                if (now - lastSmsOpen < 1000) return;
+                lastSmsOpen = now;
+                gtag('event', 'sms_open', {
+                    send_to: 'G-W9Z3V12JRN',
+                    contact_method: 'sms',
+                    contact_source: source,
+                    transport_type: 'beacon'
+                });
+                gtag('event', 'conversion', {
+                    send_to: 'AW-18180382680/ykP7CLaTwo4dENi_it1D',
+                    value: 0,
+                    transport_type: 'beacon'
+                });
+            };
+            document.addEventListener('click', function (event) {
+                var link = event.target.closest && event.target.closest('a[href^="sms:"]');
+                if (link) window.trackSmsOpen('sms_link');
+            });
+        })();
+    </script>
+
     <meta charset="utf-8" />
     <meta
         name="viewport"
