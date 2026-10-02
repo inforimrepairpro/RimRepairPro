@@ -22,6 +22,7 @@ const CTA = () => {
     const next = { name: !form.name.trim(), phone: !form.phone.trim(), address: !form.address.trim() };
     setErrors(next);
     if (Object.values(next).some(Boolean)) return;
+    window.trackSmsOpen?.(tab === 'quote' ? 'quote_form' : 'appointment_form');
     window.location.href = smsHref;
   };
 
