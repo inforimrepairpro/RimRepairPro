@@ -62,6 +62,7 @@ const CTA = () => {
       const result = await response.json();
       if (!response.ok || !result.accepted) throw new Error(result.error || 'Your request could not be sent. Please try again or text us.');
       setSent(true);
+      window.gtag?.('event', 'conversion', { send_to: 'AW-18180382680/LgX8CPDOzo4dENi_it1D', value: 0, currency: 'USD', transaction_id: result.requestId, transport_type: 'beacon' });
       window.gtag?.('event', 'generate_lead', { send_to: 'G-W9Z3V12JRN', lead_type: tab, transport_type: 'beacon' });
     } catch (err) { setSendError(err.message || 'Your request could not be sent. Please text us.'); }
     finally { setSending(false); }
