@@ -1,13 +1,14 @@
 {
-  "rewrites": [
-    {
-      "source": "/ai-quote",
-      "destination": "/index.html"
-    }
-  ],
   "functions": {
     "api/analyze-wheel.js": {
       "maxDuration": 60
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/ai-quote",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
 }

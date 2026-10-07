@@ -14,7 +14,6 @@ export const BRAND = {
 export const GOOGLE_PROFILE_URL = 'https://share.google/PhJBocTOSLuX8EsDI';
 
 export const NAV_LINKS = [
-  { label: 'AI Quote', href: '/ai-quote', badge: 'NEW' },
   { label: 'Dealers & Body Shops', href: '/dealers', badge: 'BUSINESS' },
   { label: 'Services', href: '#services' },
   { label: 'Our Work', href: '#gallery' },
