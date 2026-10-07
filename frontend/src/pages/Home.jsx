@@ -11,7 +11,6 @@ import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import MobileActionBar from '../components/MobileActionBar';
-import AIAssistant from '../components/AIAssistant';
 
 const Home = () => (
   <div className="min-h-screen bg-[#08090a] pb-[68px] md:pb-0">
@@ -27,7 +26,6 @@ const Home = () => (
     <FAQ />
     <Footer />
     <MobileActionBar />
-    <AIAssistant />
   </div>
 );
 
