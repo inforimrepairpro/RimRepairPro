@@ -27,7 +27,7 @@ const Home = () => (
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">See the transformation.</h2>
           <p className="mt-3 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">Fresh wheel restorations, before &amp; after results, and luxury car projects from Rim Repair Pro.</p>
         </div>
-        <a href="https://www.instagram.com/rimrepairpomobile/" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 shrink-0 items-center justify-center gap-3 rounded-xl bg-[#e8b94e] px-6 py-4 text-sm font-extrabold text-[#111315] transition hover:bg-[#f4ca6b]"><Instagram className="h-5 w-5" /> Follow @rimrepairpomobile <ArrowUpRight className="h-4 w-4" /></a>
+        <a href="https://www.instagram.com/rimrepairpomobile/" target="_blank" rel="noopener noreferrer" aria-label="Open Rim Repair Pro Instagram profile in a new tab" className="inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-xl bg-[#e8b94e] px-6 py-4 text-center text-sm font-extrabold text-[#111315] shadow-[0_10px_30px_rgba(232,185,78,0.15)] transition hover:-translate-y-0.5 hover:bg-[#f4ca6b] hover:shadow-[0_14px_35px_rgba(232,185,78,0.25)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e8b94e] md:w-auto"><Instagram className="h-5 w-5" /> Follow @rimrepairpomobile <ArrowUpRight className="h-4 w-4" /></a>
       </div>
     </section>
     <Process />
