@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useId } from 'react';
 
-// Instagram's recognizable camera glyph with its signature gradient.
+// Compact Instagram-style camera mark with a gradient background.
 export default function InstagramLogo({ className = 'h-6 w-6' }) {
+  const gradientId = useId().replace(/:/g, '');
   return (
-    <span className={`inline-flex shrink-0 items-center justify-center rounded-[27%] bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[18%] shadow-sm ${className}`} aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full text-white">
-        <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="2.5" />
-        <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="2.5" />
-        <circle cx="18" cy="6.5" r="1.5" fill="currentColor" />
-      </svg>
-    </span>
+    <svg className={`inline-block shrink-0 ${className}`} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id={gradientId} x1="0" y1="48" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#FED576" />
+          <stop offset=".32" stopColor="#F47133" />
+          <stop offset=".66" stopColor="#BC3081" />
+          <stop offset="1" stopColor="#4C63D2" />
+        </linearGradient>
+      </defs>
+      <rect width="48" height="48" rx="12" fill={`url(#${gradientId})`} />
+      <rect x="10" y="10" width="28" height="28" rx="8" stroke="white" strokeWidth="3.3" />
+      <circle cx="24" cy="24" r="7" stroke="white" strokeWidth="3.3" />
+      <circle cx="33" cy="15" r="2.1" fill="white" />
+    </svg>
   );
 }
