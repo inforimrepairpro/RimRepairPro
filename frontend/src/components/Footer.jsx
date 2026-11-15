@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, MessageSquareText, ArrowUpRight } from 'lucide-react';
+import { Phone, MapPin, MessageSquareText, ArrowUpRight, Instagram } from 'lucide-react';
 import { BRAND, NAV_LINKS, LOGO_URL } from '../data/mock';
 
 const trackPhoneConversion = () => {
@@ -7,6 +7,8 @@ const trackPhoneConversion = () => {
     window.gtag('event', 'conversion', { send_to: 'AW-18180382680/bNoPCIrCz9YcENi_it1D' });
   }
 };
+
+const INSTAGRAM_URL = 'https://www.instagram.com/rimrepairpomobile/';
 
 const Footer = () => (
   <footer className="border-t border-white/10 bg-[#08090a] pb-8 pt-12 text-white md:pt-16">
@@ -30,7 +32,8 @@ const Footer = () => (
           <div className="mb-4 text-[10px] font-black uppercase tracking-[.24em] text-[#e8b94e] sm:mb-5 sm:tracking-[.28em]">Contact</div>
           <a href={`tel:${BRAND.phoneTel}`} onClick={trackPhoneConversion} className="inline-block text-2xl font-extrabold text-white transition hover:text-[#e8b94e] md:text-3xl">{BRAND.phone}</a>
           <p className="mt-4 max-w-md text-[13px] leading-6 text-zinc-400 sm:text-sm sm:leading-7">For the fastest quote, text clear photos of the damaged wheel and include the address where you need mobile service.</p>
-          <a href="#contact" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-black text-[#e8b94e] sm:mt-6">Get Quote or Book Now <ArrowUpRight className="h-4 w-4"/></a>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Visit Rim Repair Pro on Instagram" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-[#e8b94e]/40 px-4 py-2 text-sm font-bold text-white transition hover:border-[#e8b94e] hover:bg-[#e8b94e]/10"><Instagram className="h-5 w-5 text-[#e8b94e]"/> @rimrepairpomobile <ArrowUpRight className="h-4 w-4"/></a>
+          <div><a href="#contact" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-black text-[#e8b94e] sm:mt-6">Get Quote or Book Now <ArrowUpRight className="h-4 w-4"/></a></div>
         </div>
       </div>
       <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-5 text-[10px] leading-5 text-zinc-600 sm:text-[11px] md:mt-12 md:flex-row md:items-center md:justify-between md:gap-3 md:pt-6"><div>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</div><div>Mobile Rim Repair · Greater Los Angeles</div></div>
