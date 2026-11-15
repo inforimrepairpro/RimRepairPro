@@ -1,6 +1,7 @@
 import React from 'react';
-import { Phone, MapPin, MessageSquareText, ArrowUpRight, Instagram } from 'lucide-react';
+import { Phone, MapPin, MessageSquareText, ArrowUpRight } from 'lucide-react';
 import { BRAND, NAV_LINKS, LOGO_URL } from '../data/mock';
+import InstagramLogo from './InstagramLogo';
 
 const trackPhoneConversion = () => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
@@ -32,7 +33,7 @@ const Footer = () => (
           <div className="mb-4 text-[10px] font-black uppercase tracking-[.24em] text-[#e8b94e] sm:mb-5 sm:tracking-[.28em]">Contact</div>
           <a href={`tel:${BRAND.phoneTel}`} onClick={trackPhoneConversion} className="inline-block text-2xl font-extrabold text-white transition hover:text-[#e8b94e] md:text-3xl">{BRAND.phone}</a>
           <p className="mt-4 max-w-md text-[13px] leading-6 text-zinc-400 sm:text-sm sm:leading-7">For the fastest quote, text clear photos of the damaged wheel and include the address where you need mobile service.</p>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Visit Rim Repair Pro on Instagram" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-[#e8b94e]/40 px-4 py-2 text-sm font-bold text-white transition hover:border-[#e8b94e] hover:bg-[#e8b94e]/10"><Instagram className="h-5 w-5 text-[#e8b94e]"/> @rimrepairpomobile <ArrowUpRight className="h-4 w-4"/></a>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Visit Rim Repair Pro on Instagram" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-[#e8b94e]/40 px-4 py-2 text-sm font-bold text-white transition hover:border-[#e8b94e] hover:bg-[#e8b94e]/10"><InstagramLogo className="h-6 w-6"/> @rimrepairpomobile <ArrowUpRight className="h-4 w-4"/></a>
           <div><a href="#contact" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-black text-[#e8b94e] sm:mt-6">Get Quote or Book Now <ArrowUpRight className="h-4 w-4"/></a></div>
         </div>
       </div>
